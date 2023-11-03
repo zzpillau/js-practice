@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const buildSnailPath = (matrix) =>{
+const snail = (matrix) =>{
     let resultMatrix = [];
     while(matrix.length){
         resultMatrix.push(...matrix.shift());
@@ -15,8 +15,8 @@ const buildSnailPath = (matrix) =>{
     return resultMatrix;
 };
 
-  console.log(JSON.stringify(snail([
+  console.log(snail([
     [1, 2, 3, 4],
     [5, 6, 7, 8],
     [9, 10, 11, 12],
-  ])));
+  ]));

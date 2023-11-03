@@ -13,6 +13,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "commander": "^11.1.0",
     "prettier": "^3.0.3"
   }
 }
