@@ -1,12 +1,15 @@
+#!/usr/bin/env node
+
 import app from './src/index.js';
 
-app();
+import { calcShipsCount } from './calcShipsCount.js';
 
 import _ from 'lodash';
 
-console.log(_.last(['one', 'two']));
 
-import { calcShipsCount } from './calcShipsCount.js';
+app();
+
+console.log(_.last(['one', 'two']));
 
 console.log('Сколько корабликов на поле?');
 const shipsCount = [
@@ -19,4 +22,3 @@ const shipsCount = [
   ];
 const count = calcShipsCount(shipsCount);
 console.log(`Корабликов: ${count}`);
-
