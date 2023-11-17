@@ -1,36 +1,24 @@
 #!/usr/bin/env node
 
-export default () => console.log('Welcome to my application');
+import app from './src/index.js';
 
-import { program } from 'commander';
+import { calcShipsCount } from './calcShipsCount.js';
 
-const hello = (name) => {
-    return `Hello, ${name}!`;
-};
-
-const greeting = (names, lower, upper) => {
-    for (const name of names) {
-        const msg = hello(name);
-        if (lower) {
-            console.log(msg.toLowerCase());
-        } else if (upper) {
-            console.log(msg.toUpperCase());
-        } else {
-            console.log(msg);
-        }
-    }
-}
+import _ from 'lodash';
 
 
-program
-    .option('-l, --lower', 'only use lowercase letters')
-    .option('-u, --upper', 'only use uppercase letters')
-    .parse(process.argv);
+app();
 
-const { args } = program;
-const options = program.opts()
-const { lower, upper } = options;
+console.log(_.last(['one', 'two']));
 
-
-greeting(args, lower, upper);
-
+console.log('Сколько корабликов на поле?');
+const shipsCount = [
+    [0, 1, 0, 0, 0, 0],
+    [0, 1, 0, 1, 1, 1],
+    [0, 0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0, 1],
+    [0, 0, 0, 0, 0, 1],
+    [1, 1, 0, 1, 0, 0],
+  ];
+const count = calcShipsCount(shipsCount);
+console.log(`Корабликов: ${count}`);
