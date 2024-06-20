@@ -1,4 +1,4 @@
-import capitalize from '../src/capitalize.js';
+import capitalize from '../drafts/capitalize.js';
 
 // Первое утверждение (проверка на слово)
 if (capitalize('hello!') !== 'Hello!') {
