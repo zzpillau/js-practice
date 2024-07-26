@@ -20,18 +20,6 @@ class Node {
     return acc;
   }
 
-  getCountLefts() {
-
-
-    // return this.reduce((acc) => acc += 1, 0)
-
-    return this.reduce((acc) => {
-      console.log(this.left);
-      return acc += 1}, 
-    
-    
-    0)
-
 
   }
 

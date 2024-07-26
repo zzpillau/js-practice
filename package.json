@@ -15,12 +15,14 @@
   "dependencies": {
     "@hexlet/immutable-fs-trees": "^0.7.1",
     "@hexlet/pairs": "^1.1.1",
+    "async": "^3.2.5",
     "crc-32": "^1.2.2",
     "fakerator": "^0.3.6",
     "intelli-espower-loader": "^1.1.0",
     "lodash": "^4.17.21",
     "power-assert": "^1.6.1",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "commander": "^11.1.0",
