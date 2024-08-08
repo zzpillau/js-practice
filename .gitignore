@@ -1,3 +1,15 @@
 /node_modules/
+
 */.vscode/
+
 /coverage/
+
+#prettier
+
+.prettierrc
+
+.npmrc
+
+# ESLint files
+.eslintrc.yml
+.eslint.config.js
