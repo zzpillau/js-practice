@@ -7,17 +7,9 @@ const compare = (data1, data2) => {
   const lines2 = data2.split('\n').slice(0, -1);
 
   // BEGIN (write your solution here)
-  const normalizedEmptyStr = (str) => (!str && str !== ''? null : str);
 
-  return lines1
-    .map((line, i) => {
-        if (line === lines2[i]) {
-          return;
-        }
-        return [normalizedEmptyStr(line), normalizedEmptyStr(lines2[i])];
-      }
-    })
-    .filter((el) => el);
+  
+
   // END
 };
 
