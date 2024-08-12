@@ -5,4 +5,4 @@ cover:
 	npx jest --coverage
 
 lint:
-  npm eslint .
+	npx eslint .

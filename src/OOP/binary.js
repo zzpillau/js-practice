@@ -25,46 +25,41 @@ class Node {
 
 
 
-  prefixTraverse(node, callback) {
-    if (!node) {
-      return
-    }
-    callback(node);
-    this.prefixTraverse(node.left, callback);
-    this.prefixTraverse(node.right, callback);
-  }
+  // prefixTraverse(node, callback) {
+  //   if (!node) {
+  //     return
+  //   }
+  //   callback(node);
+  //   this.prefixTraverse(node.left, callback);
+  //   this.prefixTraverse(node.right, callback);
+  // }
 
-  callback(node, acc = {lefts: 0, rights: 0}) {
+  // callback(node, acc = {lefts: 0, rights: 0}) => {
 
     
-    if (node.left) {
-      console.log(node.root, 'left');
-      return acc.lefts += 1;
-    } else {
-      console.log(node.root, 'left null');
-    };
+  //   if (node.left) {
+  //     console.log(node.root, 'left');
+  //     return acc.lefts += 1;
+  //   } else {
+  //     console.log(node.root, 'left null');
+  //   };
 
-    if (node.right) {
-      console.log(node.root, 'right');
-      return acc.rights += 1;
+  //   if (node.right) {
+  //     console.log(node.root, 'right');
+  //     return acc.rights += 1;
 
-    } else {
-      console.log(node.root, 'right null');
+  //   } else {
+  //     console.log(node.root, 'right null');
 
-    };
+  //   };
 
-    console.log(acc);
+  //   console.log(acc);
 
-    return acc;
-  }
+  //   return acc;
+  // }
 
-  fn() {
 
-    return this.prefixTraverse(this, this.callback)
-    
-  }
 
-}
 
 const tree = new Node(8,
   new Node(5,

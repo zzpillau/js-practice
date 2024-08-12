@@ -21,11 +21,6 @@ class Node {
   }
 
 
-  isBalanced() {
-    const LIMIT = 2;
-
-  }
-
 }
 
 
