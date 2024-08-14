@@ -1,14 +1,15 @@
 import fs from 'fs';
 
-const filePath = '/home/zzpillau/js-practice/src/asynchronous/__fixtures__/arrays/newFile.txt';
+const filePath = '/home/zzpillau/js-practice/src/asynchronous/__fixtures__/arrays/neFile.txt';
 
 const retry = (count, fn, finalCallback) => {
   const iter = (foo, calls) => {
+    console.log(calls);
     const cb = (err, body) => {
       if (err && calls > 0) {
         iter(foo, calls -= 1);
       } else if (err) {
-        finalCallback(calls, body);
+        finalCallback(count, body);
         return;
       } else {
         finalCallback(null, body);
@@ -57,6 +58,6 @@ const retry = (count, fn, finalCallback) => {
       callback(err, body);
     })
     , (err, result) => {
-      console.log(result);
+      console.log(result, 'result');
   }
 )  
