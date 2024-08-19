@@ -33,9 +33,9 @@ const each = (coll, iteratee, callback = noop) => {
   //   iteratee(item, cb)
   // }
   
-  coll.forEach((item, i) => {
+  coll.forEach((item) => {
 
-    iteratee(item, i, cb)
+    iteratee(item, cb)
   });
 };
 
@@ -44,22 +44,16 @@ const each = (coll, iteratee, callback = noop) => {
 const filter = (coll, fn, callback) => {
   const result = [];
   
-  each(coll, (item, i, cb) => {
-
-    fn(coll[i], (err, predicat) => {   
-  
-      if (predicat) {
+  each(coll, (item, cb) => {
+    fn(item, (err, data) => {
+      if (!!data) {
         result.push(item)
-        
-       } else {
-        result.push()
        }
-      
        
       cb(err);
     });
   }, (err) => {
-    callback(err, result.filter((el) => el !== undefined));
+    callback(err, result);
   });
 };
 
@@ -67,18 +61,9 @@ const filter = (coll, fn, callback) => {
 
 
   filter([2, 8, 2, 1, 1, 3, 7, 10, 1, 4], (item, callback) => {
-    const randomTimeout = () => Math.ceil(Math.random() * 10);
-
-    setTimeout(() => callback(null, item % 2 === 0), randomTimeout());
-    }, (err, results) => {
+    callback(null, item % 2 === 0);
+  }, (err, results) => {
     console.log(results); // => [2, 8, 2, 10, 4]
   });
-
-
-  // filter([0, -1, -2, 3, -4], (item, callback) => {
-  //   callback(null, item <= 0);
-  // }, (err, results) => {
-  //   console.log(results);
-  // });
 
   
