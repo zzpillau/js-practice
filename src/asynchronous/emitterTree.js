@@ -17,9 +17,16 @@ class Tree extends EventEmitter {
   }
 
   addChild(node) {
-    const newChild = new Tree(node, tree.getParent());
-    this.children.set(newChild);
+    
+    const newChild = new Tree(node, this.getKey());
+
+    this.children.set(this.children, this.newChild);
     const event = 'add';
+
+    // console.log(newChild.getParent(), '!!!!!!!!!!!!!!!!!!!!!!!!!');
+    // console.log(this.children.has(newChild));
+    
+  
     this.emit(event, newChild);
     return newChild;
   }
@@ -34,6 +41,8 @@ class Tree extends EventEmitter {
 };
 
 const tree = new Tree('start');
+console.log()
+console.log(tree.getKey());
 
 tree.on('add', node => {
   console.log('add %s', node.getKey());
@@ -41,12 +50,14 @@ tree.on('add', node => {
 
 tree.addChild('example');
 tree.addChild('test');
+console.log(tree.children.has('test'));
 
 
-tree.on('remove', node => {
-    console.log('remove %s', node.getKey());
-  });
+
+// tree.on('remove', node => {
+//     console.log('remove %s', node.getKey());
+//   });
 
 
-  tree.removeChild('test');
+//   tree.removeChild('test');
 
