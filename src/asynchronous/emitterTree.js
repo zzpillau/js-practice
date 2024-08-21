@@ -17,20 +17,21 @@ class Tree extends EventEmitter {
   }
 
   addChild(node) {
-    const newChild = new Tree(node, tree.getParent());
-    this.children.set(newChild);
-    const event = 'add';
-    this.emit(event, newChild);
-    return newChild;
+    if (!this.children.has(node)) {
+      this.children.set(node, new Tree(node, this));
+      this.emit('add', this.children.get(node));
+    } else {
+      throw new Error('Key already exists');
+    }
   }
 
-  removeChild(node) {
-    if (this.children.get(node) === undefined) {
-        throw new Error('nothing to remove');
-    }
-    const event = 'remove';
-    this.emit(event, node);
-  }
+//   removeChild(node) {
+//     if (this.children.get(node) === undefined) {
+//         throw new Error('nothing to remove');
+//     }
+//     const event = 'remove';
+//     this.emit(event, node);
+//   }
 };
 
 const tree = new Tree('start');
@@ -40,13 +41,12 @@ tree.on('add', node => {
 });
 
 tree.addChild('example');
-tree.addChild('test');
 
 
-tree.on('remove', node => {
-    console.log('remove %s', node.getKey());
-  });
+// tree.on('remove', node => {
+//     console.log('remove %s', node.getKey());
+//   });
 
 
-  tree.removeChild('test');
+//   tree.removeChild('test');
 
