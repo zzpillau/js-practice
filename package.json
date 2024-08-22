@@ -15,7 +15,7 @@
   "dependencies": {
     "@hexlet/immutable-fs-trees": "^0.7.1",
     "@hexlet/pairs": "^1.1.1",
-    "async": "^3.2.5",
+    "async": "^3.2.6",
     "axios": "^1.7.3",
     "crc-32": "^1.2.2",
     "fakerator": "^0.3.6",
