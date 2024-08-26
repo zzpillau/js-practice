@@ -37,3 +37,18 @@ const id3 = watch(filepath, 500, (err) => {
   
   setTimeout(() => fs.appendFileSync(filepath, 'ehu'), 700);
   setTimeout(() => clearInterval(id3), 5000); // остановить отслеживание через 5 секунд =
+
+
+  const makeTimer = (timeout, callback) => {
+    const interval = 100;
+    const timer = {
+      state: 'working',
+      elapsedTime: interval,
+    }
+    const { state, elapsedTime } = timer;
+    const id = setInterval(() => {
+      callback(state, )
+      
+    }, interval);
+    clearInterval(id);
+  }
