@@ -42,4 +42,4 @@ console.log(url2);
 
 url2.searchParams.set('page', 5)
 
-console.log(url2.toString());
+console.log(url2.toString( ));
