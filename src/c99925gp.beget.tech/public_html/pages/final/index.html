@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Итоговая работа</title>
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/slider.css">
+  <link rel="stylesheet" href="./styles/cards.css">
+  <link rel="stylesheet" href="./styles/media.css">
+</head>
+<body>
+  <!-- header -->
+  <header class="header">
+    <!-- navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar__wrap">
+          <div class="hamb">
+            <div class="hamb__field" id="hamb">
+              <span class="bar"></span> <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+          </div>
+          <div class="logo">
+            <a href="#" class="logo" id="logo">
+              <img class="logo-img" src="./img/logo-tomato.png" alt="Logo">
+              <p class="logo-header">köenig tomato lab</p>
+            </a>
+          </div>
+          <div class="menu-list">
+            <ul class="menu" id="menu">
+              <li><a href="#mainPage">Главная</a></li>
+              <li><a href="#catalog">Каталог</a></li>
+              <li><a href="#bestsell">Акции</a></li>
+              <li><a href="#aboutUs">О нас</a></li>
+              <li><a href="#contactUs">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="popup" id="popup"></div>
+      </div>
+    </nav>
+    <div class="tel">
+      <a title="Позвонить" href="tel:+70000000" target="_blank"><img class ="phone-icon" src="./img/icon-phone.png" alt="Позвонить" /></a>
+      <a title="Написать в Telegram" href="https://telegram.me/zzpillau" target="_blank"><img class ="telegram-icon" src="./img/icon-telegram.png" alt="Написать в Telegram" /></a>
+    </div>
+  </header>
+  <!-- main -->
+  <main>
+    <div id="mainPage"></div>
+    <!-- banner -->
+    <section class="banner-section color-mint">
+        <div class="banner-text" data-toggle="tab">
+            <p id="line1" class="b-text b-line1">Уже <span class="acсent font-acсent1">4</span> года</p>
+            <p id="line2" class="b-text b-line2">мы <span class="acсent font-acсent2"> выращиваем</span> и <span class="font-acсent3">готовим</span> для вас</p>
+            <p id="line3" class="acсent font-acсent4">крутейшие томаты</p>
+            <p id="line4" class="b-text">на Балтике</p>
+        </div>
+      </div>
+      <div class="banner-img">
+        <img class="b-img" src="./img/kolba.png" alt="Эталонный томат">
+      </div>
+    </div>
+    </section>
+    <!-- gallery -->
+    <section class="color-mint gallery-section" id="catalog">
+      <div class="gallery">
+        <div
+          class="image innerText"
+          style="--bg: url('../img/tomato-foto/gallery2.jpg')">
+          <div class="grid-item c-green">
+            <p>Семена</p>
+          </div>
+        </div>
+        <div
+          class="image innerText"
+          style="--bg: url('../img/tomato-foto/gallery6.jpg')">
+          <div class="grid-item c-rose">
+            <p>Рассада</p>
+          </div>
+        </div>
+        <div
+          class="image innerText"
+          style="--bg: url('../img/tomato-foto/gallery14.jpg')">
+          <div class="grid-item c-yellow">
+            <p>Свежие томаты</p>
+          </div>
+        </div>
+        <div
+        class="image innerText"
+        style="--bg: url('../img/tomato-foto/gallery15.jpg')">
+        <div class="grid-item c-blue">
+          <p>Аксессуары</p>
+        </div>
+        </div>
+        <div 
+        class="image sticker"
+        style="--bg: #fff">
+          <div class="sticker-text">
+            <p class="sticker-line line1">Крутейшие томаты на Балтике!</p>
+            <button class="sticker-button">В Каталог</button>
+          </div>
+        </div>
+        <div 
+          class="image collapse innerText"
+          style="--bg: url('../img/tomato-foto/gallery8.jpg')">
+          <div class="grid-item c-green">
+            <p>Консультации</p>
+          </div>
+        </div>
+        <div 
+          class="image collapse innerText"
+          style="--bg: url('../img/tomato-foto/gallery11.jpg')">
+          <div class="grid-item c-yellow">
+            <p>Томатный сок</p>
+          </div>
+        </div>
+        <div 
+          class="image collapse innerText"
+          style="--bg: url('../img/tomato-foto/gallery1.jpg')">
+          <div class="grid-item c-emerald">
+            <p>Вяленые томаты</p>
+          </div>
+        </div>
+        <div 
+          class="image collapse innerText"
+          style="--bg: url('../img/tomato-foto/gallery3.jpg')">
+          <div class="grid-item c-blue">
+            <p>Томатный джем</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- cards -->
+    <section class="main-section" id="bestsell">
+      <div class="cards-and-button">
+        <div class="extra-tomato">
+          <img class="extra-tomato-img" src="./img/logo-tomato.png" alt="">
+        </div>
+        <section class="cards-section first-cards" id="firstCards">
+          <h3 class="cards-section-header" id="firstCardsHeader">Хиты продаж 2024</h3>
+          <div class="cards-container" id="cardsContainer">
+          <!-- карточки через JS -->
+          </div>
+        </section>
+        <section class="cards-section second-cards" id="secondCards">
+          <h3 class="cards-section-header" id="secondCardsHeader">Наша продукция</h3>
+          <div class="cards-container" id="cardsContainer2">
+          <!-- карточки через JS -->
+          </div>
+        </section>
+        <button class="toggle-button" id="toggleButton">Показать ещё</button>
+      </div>
+      <!-- slider -->
+      <section class="slider-section" id="aboutUs">
+        <h3 class="slider-section-header">Отзывы</h3>
+        <div class="slider-container" id="sliderContainer">
+          <!-- Слайды через JS -->
+        </div>
+        <div class="block-imgs wrapper">
+          <button class="arrow arrow-left" id="prevButton"></button>
+          <button class="arrow arrow-right" id="nextButton"></button>
+        </div>
+      </section>
+    </section>
+  </main>
+  <!-- footer -->
+  <footer id="contactUs">
+    <div class="footer-section wrapper">
+      <div class="info-str contacts">
+        <h6>Контакты:</h2>
+        <p class="email"><a title="Написать на мейл" href="mailto:" target="_blank">example@mail.com</a></p>
+        <p class="telephone"><a title="Позвонить" href="tel:+79999999" target="_blank">+7-999-99-99</a></p>
+        <p class="tlg"><a title="Написать в Telegram" href="https://telegram.me/zzpillau" target="_blank">Telegram</a></p>
+      </div> 
+      <div class="info-str">
+        <ul class="footer-menu" id="footerMenu">
+          <li><a href="#mainPage">Главная</a></li>
+          <li><a href="#catalog">Каталог</a></li>
+          <li><a href="#bestsell">Акции</a></li>
+          <li><a href="#aboutUs">О нас</a></li>
+        </ul>
+      </div>
+      <div class="info-str" id="footerInfo">
+          <p class="text-footer">Согласие на обработку данных</p>
+          <p class="text-footer">Служба поддержки</p>
+          <p class="text-footer">Политика конфиденциальности</p>
+          <p class="text-footer">© tomatolab.ru 2024 | Koenig Tomato Lab</p>
+      </div>
+    </div>
+  </footer>
+  <!-- scripts -->
+  <script src="./scripts/main.js"></script>
+  <script src="./scripts/scroll.js"></script>
+  <script src="./scripts/slider.js"></script>
+  <script src="./scripts/cards.js"></script>
+  <script src="./scripts/button.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тема 2.4 CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="main-header">
+      <h1>Моя стилизованная страница</h1>
+    </div>
+  </header>
+
+  <nav class="sections">
+    <a class=navigation href="#section1">Раздел 1</a>
+    <a class=navigation href="#section2">Раздел 2</a>
+    <a class=navigation href="#contacts">Контакты</a>
+  </nav>
+
+  <main>
+    <div id="section1" class="sections">
+      <h2>Раздел 1</h2>
+      <p class="intro">Добро пожаловать в раздел 1. Это пример абзаца с классом</p>
+      <p>Этот абзац не имеет дополнительных классов</p>
+      <div>
+        <h3>Таблица данных</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Заголовок 1</th>
+              <th>Заголовок 2</th>
+              <th>Заголовок 3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Данные 1</td>
+              <td>Данные 2</td>
+              <td>Данные 3</td>
+            </tr>
+            <tr>
+              <td>Данные 4</td>
+              <td>Данные 5</td>
+              <td>Данные 6</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Итог</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <div id="section2" class="sections">
+      <h2>Раздел 2</h2>
+      <p class="highlight">Это абзац с классом .highlight</p>
+      <p id="unique">Это абзац с уникальным идентификатором #unique</p>
+    </div>
+
+    <div id="contacts" class="sections">
+      <h2>Контакты</h2>
+      <p class="contact">Вы можете связаться с нами по email <a href="mailto:">example@mail.com</a>  или позвонить по телефону <a href="tel:+79999999">+79999999</a></p>
+      <img src="./img/laptop_cat.png" alt="Пример изображения">
+    </div>
+  </main>
+
+  <footer class="sections">
+    <p>© 2024 Все права защищены</p>
+  </footer>
+  </body>
+</html>

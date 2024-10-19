@@ -19,6 +19,7 @@
     "axios": "^1.7.3",
     "crc-32": "^1.2.2",
     "date-fns": "^3.6.0",
+    "dom-parser": "^1.1.5",
     "fakerator": "^0.3.6",
     "intelli-espower-loader": "^1.1.0",
     "lodash": "^4.17.21",

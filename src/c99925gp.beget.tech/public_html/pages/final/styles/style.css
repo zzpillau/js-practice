@@ -1,0 +1,576 @@
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../font/Montserrat-Bold.ttf');
+}
+
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('../font/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: Pobeda;
+  src: url(../font/Pobeda.ttf);
+}
+
+@font-face {
+  font-family: LemonTuesday;
+  src: url(../font/LemonTuesday.otf);
+}
+
+:root {
+  --font-size-extra-small: 12px;
+  --font-size-small: 14px;
+  --font-size-s-medium: 16px;
+  --font-size-medium: 18px;
+  --font-size-extra-medium: 24px;
+  --font-size-big: 36px;
+  --font-size-extra-big: 40px;
+  --font-size-mega-big: 50px;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --bright-pink-crayola: rgb(239, 71, 111);
+  --sunglow: #ffd166ff;
+  --emerald: rgb(6, 214, 160);
+  --blue-ncs: rgb(17, 138, 178);
+  --midnight-green: #073b4cff;
+  --gunmetal: #292f36ff;
+  --yellow-green: #88cb00;
+  --mint-cream: rgba(247, 255, 247, 1);
+  --light-red: #ff6b6bff;
+  --naples-yellow: rgb(255, 230, 109);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat-Regular, sans-serif;
+  font-size: var(--font-size-s-medium);
+  line-height: 1.2;
+  overflow-x: hidden; 
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 15px;
+}
+
+.menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar {
+  left: 0;
+  top: 0;
+  height: 75px;
+}
+
+.navbar__wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  gap: 30px;
+}
+
+.hamb {
+  display: none;
+}
+
+.popup {
+  display: none;
+}
+
+.menu > li > a {
+  text-decoration: none;
+}
+
+.navbar__wrap .menu {
+  display: flex;
+}
+
+.navbar__wrap .menu > li {
+  display: flex;
+  align-items: stretch;
+}
+
+.navbar__wrap .menu > li > a {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: var(--midnight-green);
+}
+
+.navbar__wrap .menu > li > a:hover {
+  color: var(--bright-pink-crayola);
+  transform: scale(1.1);
+}
+
+.navbar__wrap .menu > li > a::before {
+  position: absolute;
+  left: -2px;
+  content: "";
+  background-image: url('../img/logo-tomato.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+
+.navbar__wrap .menu > li > a:hover::before {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 70px;
+}
+
+p.logo-header {
+  margin-top: 7px;
+  padding-left: 7px;
+  color: var(--midnight-green);
+  font-family: Pobeda, sans-serif;
+  font-size: var(--font-size-mega-big);
+}
+
+.tel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.telegram-icon,
+.phone-icon {
+  height: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.telegram-icon:hover,
+.phone-icon:hover {
+  transform: translateY(-3px);
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--mint-cream);
+  z-index: 50;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.active {
+    background: linear-gradient(150deg,
+  var(--mint-cream) 0%,  var(--mint-cream) 55%,
+  var(--naples-yellow) 55%,  var(--naples-yellow) 60%,
+  var(--yellow-green) 60%, var(--yellow-green) 80%,
+  #f8d2db 80%, #f8d2db 100%);
+}
+
+.color-blue {
+  background-color: var(--midnight-green);
+}
+
+.color-mint {
+  background-color: var(--mint-cream);
+}
+
+.banner-section {
+  position: relative;
+  top: 75px;
+  width: 100%;
+  height: 35vw;
+  margin: 0;
+  padding: 0 30px;
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: linear-gradient(150deg,
+  var(--naples-yellow) 0%,  var(--naples-yellow) 55%,
+  var(--naples-yellow) 55%,  var(--naples-yellow) 60%,
+  #f8d2db 60%, #f8d2db 100%);
+  box-sizing: border-box;
+}
+
+.banner-img {
+  flex: 1 1 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+.b-img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+.banner-text {
+  position: relative;
+  flex: 1 1 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-sizing: border-box;
+  gap: 5px;
+}
+
+.banner-text p {
+  font-family: Pobeda, sans-serif;
+  font-size: 12px;
+}
+
+span.font-acсent1,
+p.font-acсent4 {
+  font-family: LemonTuesday;
+  font-size: 50px;
+  color: var(--light-red);
+  text-shadow: -2px 2px 0 var(--mint-cream);
+  text-transform: uppercase;
+}
+
+.font-acсent2,
+.font-acсent3 {
+  color: var(--light-red);
+  text-shadow: -2px 1px 0 var(--gunmetal);
+}
+
+  p.font-acсent4 {
+  transition: 15s ease-out;
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.gallery-section {
+  box-sizing: content-box;
+}
+
+.gallery {
+  padding: 90px 15px 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  grid-gap: 20px;
+}
+
+.image {
+  background: var(--bg) center / cover;
+  border-radius: 8px;
+  box-shadow: inset 0 0 8px var(--midnight-green), 0 0 0 var(--gunmetal);
+  transition: all 0.3s ease-in-out;
+}
+
+.image:hover {
+  box-shadow: inset 0 0 0 var(--gunmetal), 0 8px 8px var(--gunmetal);
+}
+
+.image:hover .grid-item{
+  transform: scale(1.1);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.image:hover .c-green {
+background-color: var(--yellow-green);
+}
+
+.image:hover .c-yellow {
+  background-color: rgb(255, 224, 70);
+  }
+
+.image:hover .c-blue {
+  background-color: var(--blue-ncs);
+  }
+
+.image:hover .c-rose {
+  background-color: var(--bright-pink-crayola);
+  }
+
+  .image:hover .c-emerald {
+  background-color: var(--emerald);
+}
+
+.image:hover .grid-item p {
+  background: none;
+}
+
+.image:nth-child(5n+1) {
+  grid-row: span 2;
+  }
+
+.image:nth-child(2n) {
+  grid-column: span 2;
+}
+
+.sticker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 var(--gunmetal), 0 0 0 var(--bright-pink-crayola);
+  position: relative;
+}
+
+.sticker:hover {
+  box-shadow: inset 0 0 0 var(--bright-pink-crayola), 0 8px 0 var(--bright-pink-crayola), 8px 0 0 var(--yellow-green), -8px 0 0 var(--blue-ncs), 0 -8px 0 var(--naples-yellow)
+}
+
+.sticker-text {
+  position: relative;
+  height: 91%;
+  width: 94%;
+  background: linear-gradient(150deg,
+  var(--mint-cream) 0%,  var(--mint-cream) 20%,
+  var(--naples-yellow) 20%,  var(--naples-yellow) 30%,
+  var(--yellow-green) 30%, var(--yellow-green) 70%,
+  rgb(248, 210, 219) 70%, rgb(248, 210, 219) 100%);
+  border-radius: 8px;
+  border: 3px solid var(--gunmetal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.innerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item {
+  height: 91%;
+  width: 94%;
+  background: transparent;
+  border-radius: 8px;
+  border: 5px solid var(--mint-cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--mint-cream);
+  font-size: var(--font-size-mega-big);
+  font-family: Pobeda, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.grid-item p {
+  background: linear-gradient(45deg, rgba(100, 206, 248, 0) 0%, rgba(7, 13, 15, 0.4) 50%, rgba(100, 206, 248, 0) 100%);
+  padding: 3px 50px;
+}
+
+.line1 {
+  font-family: Pobeda, sans-serif;
+  font-weight: 900;
+  text-align: center;
+  font-size: var(--font-size-big);
+  color: var(--light-red);
+  -webkit-text-stroke: 1px var(--gunmetal);
+  text-shadow: -2px 2px 0 var(--mint-cream);
+}
+
+.sticker-button {
+  text-transform: uppercase;
+  font-family: Montserrat-BOLD, sans-serif;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--gunmetal);
+  background-color: transparent;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.sticker-button:hover {
+  transform: translatey(-2px);
+  background-color: var(--light-red);
+  box-shadow: -4px 3px 0 var(--midnight-green);
+  color: var(--mint-cream);
+  border: none;
+}
+
+.sticker-button:active {
+  transform: scale(0.8);
+}
+
+.sticker-button::after {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 90px;
+  top: -20px;
+  content: "";
+  background-image: url('../img/logo-tomato.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.8s ease-in-out;
+  transform: scale(0) rotate(-60deg);
+  z-index: 30;
+}
+
+.sticker:hover .sticker-button::after {
+  transform: scale(1) rotate(30deg);
+}
+
+.footer-section {
+  padding: 25px 0px 25px;
+  display: flex;
+  gap: 22px;
+  justify-content: space-evenly;
+  align-items: start;
+  font-size: 14px;
+  color: var(--mint-cream);
+  background-color: var(--blue-ncs);
+}
+
+.info-str{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+.info-str a:link {
+  text-decoration: none;
+  color: var(--mint-cream);
+}
+
+.info-str a:hover {
+  text-decoration: underline;
+  color: #88cb00;
+}
+
+.info-str a:active {
+  text-decoration: none;
+}
+
+.info-str a:visited {
+  color: var(--sunglow);
+}
+
+.info-str .footer-menu a::before {
+  position: absolute;
+  left: -25px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url('../img/logo-tomato.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+
+.info-str .footer-menu a:hover::before {
+  display: inline-block;
+}
+
+.contacts {
+  position: relative;
+}
+
+p.email::before {
+  position: absolute;
+  left: -25px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url('../img/icon-email.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p.telephone::before {
+  position: absolute;
+  left: -25px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url('../img/icon-phone.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p.tlg::before {
+  position: absolute;
+  left: -25px;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url('../img/icon-telegram.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.extra-tomato {
+  position: absolute;
+  top: -80px;
+}
+
+.extra-tomato-img {
+  width: 80px;
+  height: 80px;
+}

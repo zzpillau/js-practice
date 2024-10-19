@@ -1,0 +1,55 @@
+
+@font-face {
+    font-family: DRAguScript-Black;
+    src: url(./fonts/DRAguScript-Black.ttf);
+}
+
+@font-face {
+    font-family: Mont-ExtraLightDEMO;
+    src: url(./fonts/Mont-ExtraLightDEMO.otf);
+}
+
+@font-face {
+    font-family: Rostov;
+    src: url(./fonts/Rostov.ttf);
+}
+
+body {
+    background-color: #e1c886;
+    font: 18px/1.5 Mont-ExtraLightDEMO, serif;
+}
+
+h1 {
+    font: 70px/0.5 DRAguScript-Black, sans-serif;
+}
+
+h2 {
+    font: 32px/0.5 Rostov, sans-serif;
+}
+
+h3 {
+    font: 24px/0.5 Rostov, sans-serif;
+}
+
+p {
+    text-align: left;
+    width: 800px;
+}
+
+.row-name {
+    font-weight: bold;
+    text-align: left;
+    font-size: 90%;
+}
+
+table,
+td,
+th {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  font-size: 90%;
+  padding: 10px 20px;
+  text-align: center;
+  }
+
+

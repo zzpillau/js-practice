@@ -1,0 +1,265 @@
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(./fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url(./fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Cyberpunk;
+  src: url(./fonts/Cyberpunk.ttf);
+}
+
+body {
+  font-family: Montserrat-Regular, sans-serif;
+  color: #333;
+}
+
+
+header,
+footer {
+  text-align: center;
+  justify-self: center;
+  background: linear-gradient(45deg, #0c1f2d 0%, #156c76 90%);
+  color: white;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+h1,
+p,
+.nav-menu,
+.flex-item p {
+  margin: 0;
+}
+
+h1, h2 {
+  font-family: Montserrat-Bold;
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+
+main h2 {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* nav */
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color .3s;
+}
+
+.nav-menu a:hover {
+  color: #64cef8;
+  border-bottom: 1px solid #64cef8;
+  padding-bottom: 5px;
+}
+
+/* burger menu */
+.menu-toggle-checkbox {
+  display: none;
+}
+
+.menu-toggle-label {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.menu-toggle-label .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  transition: all .3s;
+}
+
+.flex-section h2 {
+  margin-bottom: 30px;
+}
+
+/* carousel */
+
+.carousel {
+  z-index: 0;
+}
+
+.carousel-caption {
+  font-family: Montserrat-Bold, sans-serif;
+}
+
+.carousel-caption-header {
+  font-size: 32px;
+}
+
+.carousel-caption-text{
+  font-size: 20px;
+  background: linear-gradient(45deg, rgba(100, 206, 248, 5%) 0%, rgba(100, 206, 248, 40%) 50%, rgba(100, 206, 248, 5%) 90%);
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.cyberpunk-font {
+  font-family: Cyberpunk, sans-serif;
+  font-size: 72px;
+}
+
+.carousel-item img {
+  filter: brightness(0.7);
+}
+
+.btn-primary {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-family: Montserrat-Bold, sans-serif;
+}
+
+/* flex-section */
+
+.flex-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  animation: gradient 15s ease-in-out infinite;
+  transition: all .3s ease-in-out .1s;
+}
+
+.flex-section:hover {
+  background-color: #e0e0e0;
+}
+
+.flex-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 25px;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.flex-item {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  transition: all .3s ease-out;
+}
+
+.flex-item img {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.flex-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* grid-section */
+
+.grid-section {
+  background-color: #eaeaea;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.grid-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  gap: 10px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all .4s ease;
+}
+
+.grid-item h5 {
+  font-family: Montserrat-Bold, sans-serif;
+  margin: 0;
+}
+
+.grid-item:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.grid-item img{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.top-btn img{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 31px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* @keyframes */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+

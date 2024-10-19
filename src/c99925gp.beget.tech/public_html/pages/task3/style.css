@@ -1,0 +1,184 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+header,
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+
+main h2 {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.flex-section h2 {
+  margin-top: 92px;
+}
+
+/* flex-section */
+
+.flex-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+.flex-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: stretch;
+  /* flex-wrap: wrap; */
+}
+
+.flex-item {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  /* align-self: stretch; */
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+.flex-item img {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+
+/* grid-section */
+
+.grid-section {
+  background-color: #eaeaea;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  gap: 10px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item img{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.top-btn img{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  cursor: pointer;
+}
+
+
+/* position */
+
+.block {
+  width: 250px;
+  height: 150px;
+}
+
+.mini-block {
+  width: 80px;
+  height: 50px;
+}
+
+.div-1 {
+  background-color: yellow;
+  position: static; /*нормальный поток*/
+}
+
+.div-2 {
+  background-color: blueviolet;
+  position: relative; /*относительно своего первоначального положения*/
+  left: 350px;
+  top: 120px;
+  /* место в потоке сохраняется */
+}
+
+.div-3 {
+  background-color: teal;
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  z-index: 1; /*только к элементам absolute, fixed, relative, sticky*/
+  /*не в потоке*/
+  /*относительно страницы или родительского блока со значением не-static*/
+}
+
+.div-3-1 {
+  background-color: bisque;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.div-3-2 {
+  background-color: coral;
+  position: absolute;
+  top: 350px;
+  left: 350px;
+}
+
+.div-4 {
+  background-color: sandybrown;
+  position: fixed;
+  top: 0;
+  left: 0;
+    /*не в потоке*/
+}
+
+.div-5 {
+  background-color: tomato;
+} 
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Домашнее задание №4</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
+</head>
+<body>
+  <header>
+    <h1>Искусственный Интеллект</h1>
+    <nav>
+      <input type="checkbox" id="menuToggle" class="menu-toggle-checkbox">
+      <label for="menuToggle" class="menu-toggle-label">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+      <ul class="nav-menu">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+      <div class="carousel-inner carousel-fade">
+        <div class="carousel-item active" data-bs-interval=4000">
+          <img class="d-block w-100" src="./img/possums-1.webp" alt="опоссумы">
+          <div class="carousel-caption d-none d-md-block">
+            <p class="carousel-caption-header">Милейшие опоссумы</p>
+            <p class="carousel-caption-text mt-3 p-1">в футуристичных костюмчиках</p>
+            <button class="btn btn-primary mt-5">Умилиться</button>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img class="d-block w-100" src="./img/highTechRobot-1.webp" alt="робот">
+          <div class="carousel-caption d-none d-md-block">
+            <p class="carousel-caption-header">Hi-tech роботы</p> 
+            <p class="carousel-caption-text mt-3 p-1">в hi-tech атмосфере</p>
+            <button class="btn btn-primary mt-5">Удивиться</button>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img class="d-block w-100 cyberpunk-img" src="./img/CyberpunkUrbanWoman-1.webp" alt="киберпанк">
+          <div class="carousel-caption d-none d-md-block">
+            <p class="carousel-caption-header cyberpunk-font">Киберпанк</p>
+            <p class="carousel-caption-text mt-3 p-1">в наших сердцах</p>
+            <button class="btn btn-primary mt-5">Преисполниться</button>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <section class="flex-section">
+      <h2>Искусственный Интеллект в ежедневной жизни</h2>
+      <p>Искусственный интеллект (ИИ) уже играет важную роль в нашей повседневной жизни. Вот несколько примеров того, как ИИ используется в ежедневной жизни:</p>
+
+      <div class="flex-container">
+
+        <div class="flex-item">
+          <img src="./img/medicine.jpeg" alt="ИИ в медицне">
+          <p>ИИ помогает врачам в диагностике заболеваний, анализе медицинских изображений в разработке индивидуальных планов лечения. Например, алгоритмы ИИ могут анализировать МРТ и КТ сканы, выявляя аномалии с точностью, сопоставимой с экспертами.</p>
+        </div>
+
+        <div class="flex-item">
+          <img src="./img/transport.jpeg" alt="ИИ в транспорте">
+          <p>ИИ используется для управления автономными транспортными средствами, оптимизации маршрутов и повышения безопасности дорожного движения. Системы ИИ способны предсказывать пробки и предлагать альтернативные пути, что сокращает время в пути и уменьшает заторы.</p>
+        </div>
+
+        <div class="flex-item">
+          <img src="./img/entertain.jpeg" alt="ИИ в развлечениях">
+          <p>ИИ применяется для создания рекомендательных систем, которые предлагают фильмы, музыку, и игры на основе предпочтений пользователя. Алгоритмы машинного обучения анализируют поведение пользователей и предлагают контент, который им может понравится.</p>
+        </div>
+      </div>
+    </section>
+    <section class="grid-section">
+      <h2>Технологии и Инструменты ИИ</h2>
+      <p>Технологии искусственного интеллекта развиваются стремительно, открывая новые возможности для применения. Вот некоторые из основных инструментов и технологий, используемых в сфере ИИ:</p>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="./img/ml.jpg" alt="Машинное обучение">
+          <h5>Машинное обучение (МО)</h5>
+          <p>это подмножество ИИ, которое использует алгоритмы для анализа данных, обучения на основе этих данных и принятия решений. МО находит применение в прогнозировании, классификации и кластеризации данных.</p>
+        </div>
+        <div class="grid-item">
+          <img src="./img/neuralNetworks.jpg" alt="Нейронные сети">
+          <h5>Нейронные сети</h5>
+          <p>это модели машинного обучения, вдохновленные биологическими нейронными сетями. Они используются для распознавания образов, обработки естественного языка и других задач, требующих высокой точности и адаптивности.</p>
+        </div>
+        <div class="grid-item">
+          <img src="./img/NLO.jpg" alt="Обработка естественного языка">
+          <h5>Обработка естественного языка (ОНЯ)</h5>
+          <p>включает в себя алгоритмы, которые позволяют компьютерам понимать, интерпретировать и генерировать человеческий язык. ОНЯ используется в чат-ботах, переводчиках и системах анализа текста.</p>
+        </div>
+        <div class="grid-item">
+          <img src="./img/computerVision.jpg" alt="Компьютерное зрение">
+          <h5>Компьютерное зрение</h5>
+          <p>это область ИИ, занимающаяся анализом визуальной информации. Оно используется в системах распознавания лиц, автономных транспортных средствах и медицинской визуализации для диагностики заболеваний.</p>
+        </div>
+        <div class="grid-item">
+          <img src="./img/robots.jpg" alt="Робототехника">
+          <h5>Робототехника</h5>
+          <p>объединяет ИИ и инженерные науки для создания умных роботов, способных выполнять сложные задачи. Эти роботы могут использоваться в производстве, медицине и даже в быту для выполнения различных задач.</p>
+        </div>
+        <div class="grid-item">
+          <img src="./img/generativeModels.jpg" alt="Генеративные модели">
+          <h5>Генеративные модели</h5>
+          <p>например, GANs (Generative Adversarial Networks), используются для создания новых данных, которые напоминают реальные данные. Они применяются для создания изображений, видео и других видов контента.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Искусственный Интеллект. Все права защищены.</p>
+  </footer>
+  <button class="top-btn">
+    <img src="img/top-button.png" alt="top-button">
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+  </body>
+</html>
