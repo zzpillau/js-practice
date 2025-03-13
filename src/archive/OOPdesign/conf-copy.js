@@ -15,10 +15,8 @@ export default class Truncater {
     return text.length > actualOpt.length ? `${substr}${actualOpt.separator}` : substr;
   }
 
-
   // END
 }
-
 
 const text = 'one two';
 
@@ -42,11 +40,6 @@ console.log(truncater.truncate(text, {}));
 // //     return `${substr}${actualOpt.separator}`
 // //   }
 // // }
-
-
-
-
-
 
 // class PasswordValidator {
 //   constructor(options = {}) {
@@ -76,11 +69,7 @@ console.log(truncater.truncate(text, {}));
 
 //   }
 
-
-
 // }
-
-
 
 // const validator = new PasswordValidator({ containNumbers: false });
 

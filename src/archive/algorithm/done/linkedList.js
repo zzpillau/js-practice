@@ -1,4 +1,3 @@
-
 class LinkedListNode {
   constructor(value, next = null) {
     this.value = value;
@@ -121,10 +120,3 @@ export class LinkedList {
     return result;
   }
 }
-
-
- 
-
-
-
-

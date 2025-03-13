@@ -7,7 +7,7 @@ class Node {
 
   #prefixTraverse(node, callback) {
     if (!node) {
-      return
+      return;
     }
     callback(node);
     this.#prefixTraverse(node.left, callback);
@@ -15,60 +15,65 @@ class Node {
   }
 
   #makeCollection() {
-    const coll = []
+    const coll = [];
     this.#prefixTraverse(this, (node) => {
       coll.push(node.key);
-    })
+    });
     return coll;
   }
 
   getSum() {
-    const newColl = this.#makeCollection()
+    const newColl = this.#makeCollection();
     console.log(newColl);
-    return newColl.reduce((acc, currentValue) => {
-      return acc + currentValue
-    }, 0);
+    return newColl.reduce((acc, currentValue) => acc + currentValue, 0);
   }
 
   getCount() {
-    const newColl = this.#makeCollection()
+    const newColl = this.#makeCollection();
     return newColl.length;
   }
 
   toArray() {
-    return this.#makeCollection()
+    return this.#makeCollection();
   }
 
   toString() {
-    const newColl = this.#makeCollection()
-    return `(${newColl.join(', ')})`
+    const newColl = this.#makeCollection();
+    return `(${newColl.join(', ')})`;
   }
 
   every(fn) {
     const newColl = this.#makeCollection();
-    return newColl.every(fn)
+    return newColl.every(fn);
   }
 
   some(fn) {
     const newColl = this.#makeCollection();
-    return newColl.some(fn)
+    return newColl.some(fn);
   }
-
-
 }
 
-const tree = new Node(9,
-  new Node(4,
+const tree = new Node(
+  9,
+  new Node(
+    4,
     new Node(8),
-    new Node(6,
+    new Node(
+      6,
       new Node(3),
-      new Node(7))),
-  new Node(17,
+      new Node(7),
+    ),
+  ),
+  new Node(
+    17,
     null,
-    new Node(22,
+    new Node(
+      22,
       null,
-      new Node(20))));
-
+      new Node(20),
+    ),
+  ),
+);
 
 // console.log(tree);
 // console.log(tree.prefixTraverse(tree, (node) => {
@@ -80,8 +85,6 @@ console.log(tree.getSum());
 console.log(tree.getCount());
 console.log(tree.toArray());
 console.log(tree.toString());
-
-
 
 // Реализуйте следующие методы в классе:
 

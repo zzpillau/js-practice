@@ -11,7 +11,6 @@ const once = (fn) => {
   };
 };
 
-
 const each = (coll, iteratee, callback) => {
   const oncedCallback = once(callback);
   let completed = 0;
@@ -34,71 +33,56 @@ const each = (coll, iteratee, callback) => {
   coll.forEach((item, i) => iteratee(item, i, cb));
 };
 
-
 const detect = (coll, fn, callback) => {
   let result;
   each(coll, (item, i, cb) => {
-
     fn(item, (err) => {
-
-
       console.log(item);
 
       if (!err) {
         result = item;
         cb(err);
-
       }
 
-      if (i === coll.length -1) {
-      cb(err);
-
+      if (i === coll.length - 1) {
+        cb(err);
       }
-
-
     });
   }, (err) => {
     callback(err, result);
   });
 };
 
-
 export default detect;
 
+const coll1 = [8, 9];
+detect(coll1, (item, callback) => {
+  callback('error');
+}, (err) => {
+  console.log('final error', err);
+});
 
-  const coll1 = [8, 9];
-  detect(coll1, (item, callback) => {
-    callback('error');
-  }, (err) => {
-    console.log('final error', err);
-    
+const coll = [1, 2, 5];
+detect(coll, (item, callback) => {
+  if (item === 2) {
+    callback(null, item);
+  } else {
+    callback('error two');
+  }
+}, (err, result) => {
+  console.log(err);
+  console.log('final result', result);
+});
+
+const file1 = '/home/zzpillau/js-practice/src/asynchronous/fixtures/file1';
+const file2 = '/home/zzpillau/js-practice/src/asynchronous/fixtures/file2';
+const file3 = '/home/zzpillau/js-practice/src/asynchronous/fixtures/file3';
+
+async.detect([file1, file2, file3], (filePath, callback) => {
+  fs.access(filePath, (err) => {
+    callback(null, !err);
   });
-
-  
-  const coll = [1, 2, 5];
-  detect(coll, (item, callback) => {
-    if (item === 2) {
-      callback(null, item);
-    } else {
-      callback('error two');
-    }
-  }, (err, result) => {
-console.log(err);
-console.log('final result', result);
-  });
-
-
-
-  const file1 = '/home/zzpillau/js-practice/src/asynchronous/fixtures/file1';
-  const file2 = '/home/zzpillau/js-practice/src/asynchronous/fixtures/file2';
-  const file3 = '/home/zzpillau/js-practice/src/asynchronous/fixtures/file3';
-  
-  async.detect([file1, file2, file3], (filePath, callback) => {
-    fs.access(filePath, err => {
-      callback(null, !err)
-    });
-  }, (err, result) => {
-      console.log(result);
-      // result now equals the first file in the list that exists
-  });
-  
+}, (err, result) => {
+  console.log(result);
+  // result now equals the first file in the list that exists
+});

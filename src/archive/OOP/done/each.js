@@ -3,10 +3,9 @@ const objects = [
   { name: 'Mia' },
 ];
 
-
 const each = (coll, callback) => {
   coll.forEach((obj) => callback.call(obj));
-}
+};
 
 // console.log(each(objects));
 

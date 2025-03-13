@@ -1,5 +1,5 @@
-import take from '../src/take.js';
 import { strict as assert } from 'node:assert';
+import take from '../src/take.js';
 
 assert.deepStrictEqual(take([], 1), []);
 assert.deepStrictEqual(take([1, 2, 3]), [1]);

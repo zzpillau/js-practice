@@ -4,7 +4,6 @@ class Enumerable {
   constructor(collection, operations) {
     this.collection = collection;
     this.operations = operations || [];
-    
   }
 
   build(fn) {
@@ -40,26 +39,22 @@ class Enumerable {
   }
 
   // BEGIN (write your solution here)
-    toArray() {
-
-      const newColl = this.collection.slice()
+  toArray() {
+    const newColl = this.collection.slice();
 
     if (!this.memo) {
       this.memo = this.operations.reduce((acc, op) => op(acc), newColl);
     }
-    
+
     return this.memo;
-    
-    }
+  }
 
-
-    get length() {
-      return this.toArray().length;
-    }
+  get length() {
+    return this.toArray().length;
+  }
 
   // END
 }
-
 
 const cars = [
   { brand: 'bmw', model: 'm5', year: 2014 },
@@ -70,7 +65,6 @@ const cars = [
 ];
 const coll = new Enumerable(cars);
 
-
 const newColl = coll.where((car) => car.brand === 'kia').select((car) => car.model);
 
 const result = newColl.toArray();
@@ -80,23 +74,7 @@ result.pop();
 
 console.log(newColl.memo);
 
-
 // expect(newColl.memo).not.toEqual(result);
 // expect(newColl.memo).toEqual(['sorento', 'rio', 'sportage']);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default Enumerable;
-
-

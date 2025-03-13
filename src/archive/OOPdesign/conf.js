@@ -8,10 +8,10 @@ class PasswordValidator {
   static defaultOptions = {
     minLength: 8,
     containNumbers: true,
-  }
+  };
 
   validate(value) {
-    const actualOpt = { ...PasswordValidator.defaultOptions, ...this.options }
+    const actualOpt = { ...PasswordValidator.defaultOptions, ...this.options };
     console.log(actualOpt);
 
     const errorLog = {};
@@ -25,14 +25,8 @@ class PasswordValidator {
     }
 
     return errorLog;
-
   }
-
-
-
 }
-
-
 
 const validator = new PasswordValidator({ containNumbers: false });
 

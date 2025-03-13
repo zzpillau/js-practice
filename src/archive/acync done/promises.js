@@ -16,13 +16,12 @@ const initPromise = Promise.resolve([]);
 // В then отдается функция, а не ее вызов!
 const promise = filePaths.reduce((acc, path) => {
   // Аккумулятор – всегда промис, внутри которого массив с содержимым файлов
-  const newAcc = acc.then((contents) => {
-    // Читаем файл и добавляем его данные в аккумулятор
-  
-    return fsp.stat(path, 'utf-8')
-      .then((stats) => stats.isDirectory() ? contents.concat('directory') : contents.concat('file'))
-      .catch(() => contents.concat('null'));
-    })
+  const newAcc = acc.then((contents) =>
+  // Читаем файл и добавляем его данные в аккумулятор
+
+    fsp.stat(path, 'utf-8')
+      .then((stats) => (stats.isDirectory() ? contents.concat('directory') : contents.concat('file')))
+      .catch(() => contents.concat('null')));
   return newAcc;
 }, initPromise);
 
@@ -31,7 +30,6 @@ const promise = filePaths.reduce((acc, path) => {
 
 // Если надо, продолжаем обработку
 promise.then((contents) => console.log(contents));
-
 
 // const getTypes = (pathes) => {
 //   const initPromise = Promise.resolve([]);
@@ -50,10 +48,6 @@ promise.then((contents) => console.log(contents));
 //   return result;
 // }
 
-
 // // fsp.stat(path('first.txt')).then((stats) => stats.isDirectory() ? console.log('directory') : console.log('file'));
 
 // getTypes(pathes).then(console.log);
-
-
-

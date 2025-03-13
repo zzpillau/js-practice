@@ -1,11 +1,7 @@
-
 const bind = (obj, fn) => {
-  const foo = (context) => (func) => (...args) => {
-    return func.apply(context, args)
-  }
-  return foo(obj)(fn)
-}
-
+  const foo = (context) => (func) => (...args) => func.apply(context, args);
+  return foo(obj)(fn);
+};
 
 const obj = { number: 5 };
 const fn = function fn(number) {

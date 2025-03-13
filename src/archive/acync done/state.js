@@ -26,10 +26,10 @@ import fs from 'fs';
 //       return;
 //     }
 //     state.count += 1;
-//     state.results[0] = data1; 
+//     state.results[0] = data1;
 //     tryWriteNewFile();
 //   });
-  
+
 //   console.log('second reading was started');
 //   fs.readFile('src/asynchronous/index-copy.txt', (error2, data2) => {
 //     console.log('second callback');
@@ -41,7 +41,6 @@ import fs from 'fs';
 //     tryWriteNewFile();
 //   });
 
-
 map(['src/asynchronous/index.txt', 'src/asynchronous/index-copy.txt'], fs.readFile, (error1, results) => {
   if (error1) {
     return;
@@ -51,8 +50,5 @@ map(['src/asynchronous/index.txt', 'src/asynchronous/index-copy.txt'], fs.readFi
       return;
     }
     console.log('finished!');
-  })
-})
-
-
-
+  });
+});

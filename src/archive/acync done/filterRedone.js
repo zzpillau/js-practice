@@ -10,7 +10,6 @@ const once = (fn) => {
   };
 };
 
-
 // const filterColl = (collection) => collection
 
 //   .reduce((acc, el) => {
@@ -22,22 +21,19 @@ const once = (fn) => {
 
 //   .filter((el) => !!el);
 
-
-  const filterColl = (collection) => {
-
-    const newColl = []
-    collection.forEach((el) => {
+const filterColl = (collection) => {
+  const newColl = [];
+  collection.forEach((el) => {
     const [value, index] = el;
     newColl[index] = value;
   }, []);
-  console.log(newColl)
+  console.log(newColl);
 
   // return newColl.filter((el) => !!el || el === undefined);
   return newColl.filter((el) => el !== false);
-  }
+};
 
-  // return newCollection;
-
+// return newCollection;
 
 const each = (coll, iteratee, callback = noop) => {
   const oncedCallback = once(callback);
@@ -62,17 +58,17 @@ const each = (coll, iteratee, callback = noop) => {
 };
 
 const filter = (coll, fn, callback) => {
-  let result = [];
+  const result = [];
   each(coll, (item, i, cb) => {
     fn(item, (err, predicat) => {
       console.log(item);
       if (predicat) {
-      result.push([item, i])
-    };
+        result.push([item, i]);
+      }
       cb(err);
     });
   }, (err) => {
-    console.log(result, 'result')
+    console.log(result, 'result');
     callback(err, filterColl(result));
   });
 };
@@ -83,4 +79,4 @@ filter([0, -1, -2, -4], (item, callback) => {
   console.log(results); // => [2, 8, 2, 10, 4]
 });
 
-console.log(undefined % 2 === 0)
+console.log(undefined % 2 === 0);

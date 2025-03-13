@@ -18,16 +18,14 @@
 //     const target = e.target;
 //     const slides = target.closest('div[data-ride]');
 //     console.log(slides.id);
-      
+
 //     const activeSlide = slides.querySelector('.active');
 //         console.log(activeSlide)
 
 //     activeSlide.classList.remove('active')
-      
+
 //     const nextSlide = activeSlide.nextElementSibling;
 //     nextSlide.classList.add('active');
-
-    
 
 //   })
 
@@ -35,24 +33,18 @@
 //     const target = e.target;
 //     const slides = target.closest('div[data-ride]');
 //     console.log(slides.id);
-      
+
 //     const activeSlide = slides.querySelector('.active');
 //         console.log(activeSlide)
 
 //     activeSlide.classList.remove('active')
-      
+
 //     const prevSlide = activeSlide.previousElementSibling;
 //     prevSlide.classList.add('active');
 
-    
-
 //   })
-  
 
-  
 // })
-
-
 
 // // @ts-check
 
@@ -80,7 +72,6 @@
 
 //     const nextActiveSlide = goingPrev ? prevSlide : nextSlide
 
-
 //     activeSlide.classList.remove('active');
 //     nextActiveSlide.classList.add('active');
 //   }
@@ -91,12 +82,6 @@
 
 //   // END
 // };
-
-
-
-
-
-
 
 // // @ts-check
 
@@ -128,7 +113,6 @@
 //     console.log(nextActiveSlide.className)
 //     console.log(nextActiveSlide)
 
-
 //     activeSlide.classList.remove('active');
 //     nextActiveSlide.classList.add('active');
 //   }
@@ -140,11 +124,6 @@
 
 //   // END
 // };
-
-
-
-
-
 
 // // @ts-check
 
@@ -187,7 +166,6 @@
 
 //     // console.log('className', nextActiveSlide.className)
 
-
 //     activeSlide.classList.remove('active');
 //     gener(target.parentNode.dataset.slide)
 //         // goingPrev || goingNext ? prevSlide.classList.add('active') : nextSlide.classList.add('active');
@@ -202,8 +180,6 @@
 //   // END
 // };
 
-
 console.log(
-  /aa/.test('aa aa aa')
-)
-
+  /aa/.test('aa aa aa'),
+);

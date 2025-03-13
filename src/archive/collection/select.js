@@ -11,7 +11,7 @@ class Enumerable {
 
   select(fn) {
     const newOps = this.operations.slice();
-    newOps.push(coll => coll.map(fn));
+    newOps.push((coll) => coll.map(fn));
     return new Enumerable(this.collection.slice(), newOps);
   }
 
@@ -34,7 +34,7 @@ class Enumerable {
       return 0;
     };
 
-    newOps.push(coll => coll.sort(comparator));
+    newOps.push((coll) => coll.sort(comparator));
 
     return new Enumerable(this.collection.slice(), newOps);
   }
@@ -42,26 +42,21 @@ class Enumerable {
   where(fn) {
     const newOps = this.operations.slice();
 
-    newOps.push(coll => coll.filter(fn));
+    newOps.push((coll) => coll.filter(fn));
 
     return new Enumerable(this.collection.slice(), newOps);
   }
 
   toArray() {
-
     const newColl = this.collection.slice();
 
     return this.operations.reduce((acc, op) => op(acc), newColl);
-
   }
 
   // END
 }
 
 export default Enumerable;
-
-
-
 
 const cars = [
   { brand: 'bmw', model: 'm5', year: 2014 },
@@ -72,12 +67,11 @@ const cars = [
 ];
 const coll = new Enumerable(cars);
 
-const result = coll.orderBy(car => car.year, 'asc')
-  .where(car => car.brand === 'bmw')
-  .select(car => car.model)
-  .toArray()
+const result = coll.orderBy((car) => car.year, 'asc')
+  .where((car) => car.brand === 'bmw')
+  .select((car) => car.model)
+  .toArray();
 
-  console.log(result);
-  
+console.log(result);
 
 // assert.deepEqual(result.toArray(), ['m5', 'm4']);

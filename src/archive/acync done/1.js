@@ -7,7 +7,6 @@ const content2 = fs.readFileSync('src/asynchronous/index-copy.txt', 'utf-8');
 console.log(content);
 console.log(content2);
 
-
 // const callback = (_error, data) => console.log(data);
 // console.log('before')
 

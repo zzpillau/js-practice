@@ -1,25 +1,24 @@
 const partition = (items, left, right, pivot, direction) => {
   while (true) {
-
     if (direction === 'asc') {
-    while (items[left] < pivot) {
-      left += 1;
+      while (items[left] < pivot) {
+        left += 1;
+      }
+
+      while (items[right] > pivot) {
+        right -= 1;
+      }
     }
 
-    while (items[right] > pivot) {
-      right -= 1;
-    }
-  }
+    if (direction === 'desc') {
+      while (items[left] > pivot) {
+        left += 1;
+      }
 
-  if (direction === 'desc') {
-    while (items[left] > pivot) {
-      left += 1;
+      while (items[right] < pivot) {
+        right -= 1;
+      }
     }
-
-    while (items[right] < pivot) {
-      right -= 1;
-    }
-  }
 
     if (left >= right) {
       return right + 1;
@@ -32,7 +31,6 @@ const partition = (items, left, right, pivot, direction) => {
     left += 1;
     right -= 1;
   }
-
 };
 
 const sort = (items, left, right, direction) => {
@@ -49,7 +47,6 @@ const sort = (items, left, right, direction) => {
   sort(items, splitIndex, right, direction);
 };
 
-
 const quickSort = (items, direction = 'asc') => {
   const newItems = items.slice();
   sort(newItems, 0, newItems.length - 1, direction);
@@ -60,13 +57,9 @@ const items = [10, 20, 0, -1];
 
 console.log(quickSort(items));
 
-
- // [-1, 0, 10, 20]
+// [-1, 0, 10, 20]
 console.log(quickSort([]));
 
- // []
+// []
 console.log(quickSort(items, 'desc'));
- // [20, 10, 0, -1]
-  
-
-
+// [20, 10, 0, -1]

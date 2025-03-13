@@ -40,7 +40,7 @@ const play = (rounds, rollDie) => {
 
   const generatedString = unitedRolls.map((el) => {
     const [x, y] = el;
-    return `${x}|${'#'.repeat(y)}${y ? y : ''}`;
+    return `${x}|${'#'.repeat(y)}${y || ''}`;
   });
 
   console.log(generatedString.join('\n'));

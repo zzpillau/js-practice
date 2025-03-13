@@ -1,13 +1,12 @@
 const f = (message) => {
   console.log(message);
-}
+};
 
 // setTimeout(f, 3000, 'Hiii!!!');
 
 // setTimeout(() => f('Hey!'), 1000)
 
 // setTimeout(f.bind(null, 'Ouch!'), 2000)
-
 
 // const id = setInterval(f.bind(null, 'Interval'), 2000);
 // setTimeout(() => clearInterval(id), 16000);
@@ -20,8 +19,6 @@ const f = (message) => {
 //   console.log(counter);
 //   counter += 1;
 // }, 5000);
-
-
 
 // const watch = (filePath, interval, callback) => {
 //   const timerId = setInterval(() => {

@@ -1,6 +1,5 @@
 // BEGIN (write your solution here)
 const isPalindrome = (str) => {
-
   if (str.length === 1) {
     return true;
   }
@@ -18,8 +17,7 @@ const isPalindrome = (str) => {
   console.log('substr', substr);
 
   return isPalindrome(substr);
-
-}
+};
 
 export default isPalindrome;
 

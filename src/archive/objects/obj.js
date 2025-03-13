@@ -2,16 +2,13 @@ const get = (obj, keys) => {
   let current = obj;
   for (const key of keys) {
     if (Object.hasOwn(current, key)) {
-    current = current[key];
-  } else {
-    return null;
+      current = current[key];
+    } else {
+      return null;
+    }
   }
-}
   return current ?? null;
 };
-
-
-
 
 const data = {
   user: 'ubuntu',
@@ -26,7 +23,5 @@ const data = {
     },
   },
 };
- 
+
 console.log(get(data, ['hosts', 1, 'name'])); // 'web2'
-
-

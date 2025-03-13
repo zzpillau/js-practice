@@ -6,7 +6,7 @@ const handlers = {
       return target[prop];
     }
     return 0;
-  }
+  },
 };
 
 const obj = new Proxy(usersCountByCountry, handlers);
@@ -18,17 +18,16 @@ console.log(obj.usa);
 const student = {
   name: 'Tanya',
   age: 38,
-  program: 'js-frontend'
-}
+  program: 'js-frontend',
+};
 
 const rewrite = new Proxy(student, {
   set: (target, prop, value) => {
     if (prop in target) {
       target[prop] = value;
       return true;
-    } else {
-      throw new Error(`Cannot rewrite non-existed property '${prop}'`);
     }
+    throw new Error(`Cannot rewrite non-existed property '${prop}'`);
   },
 });
 
@@ -44,27 +43,24 @@ const user = {
 
 const protectedProps = ['password'];
 
-const error = `Access to 'password' is restricted`;
+const error = 'Access to \'password\' is restricted';
 
-const protect = (obj, protectedProps) => {
-
-  return new Proxy(obj, {
-    set: (target, prop, value) => {
-      if (prop in target && protectedProps.includes(prop)) {
-        throw new Error(`Access to '${prop}' is restricted`)
-      }
-      target[prop] = value;
-      return true;
-    },
-    get: (target, prop) => {
-      if (prop in target && protectedProps.includes(prop)) {
-        throw new Error(`Access to '${prop}' is restricted`)
-      }
-      return target[prop];
+const protect = (obj, protectedProps) => new Proxy(obj, {
+  set: (target, prop, value) => {
+    if (prop in target && protectedProps.includes(prop)) {
+      throw new Error(`Access to '${prop}' is restricted`);
     }
+    target[prop] = value;
+    return true;
+  },
+  get: (target, prop) => {
+    if (prop in target && protectedProps.includes(prop)) {
+      throw new Error(`Access to '${prop}' is restricted`);
+    }
+    return target[prop];
+  },
 
-  })
-}
+});
 
 const protectedUser = protect(user, protectedProps);
 

@@ -13,13 +13,14 @@ const cardsData = [
     productQuantity: 'В упаковке: 10 семян',
     productPrice: '₽130',
   },
-  {productImage: './img/ox-heart.jpg',
-  productName: 'Бычье сердце',
-  productDescription: 'Любимый томат вашей бабушки',
-  productQuantity: 'В упаковке: 5 семян',
-  productPrice: '₽180',
-  }
-]
+  {
+    productImage: './img/ox-heart.jpg',
+    productName: 'Бычье сердце',
+    productDescription: 'Любимый томат вашей бабушки',
+    productQuantity: 'В упаковке: 5 семян',
+    productPrice: '₽180',
+  },
+];
 
 const cardsData2 = [
   {
@@ -36,13 +37,14 @@ const cardsData2 = [
     productQuantity: 'Баночка 250 мл',
     productPrice: '₽250',
   },
-  {productImage: './img/jam.jpeg',
-  productName: 'Томатный джем',
-  productDescription: 'Сладкие томаты-черри и специи',
-  productQuantity: 'Баночка 300 мл',
-  productPrice: '₽200',
-  }
-]
+  {
+    productImage: './img/jam.jpeg',
+    productName: 'Томатный джем',
+    productDescription: 'Сладкие томаты-черри и специи',
+    productQuantity: 'Баночка 300 мл',
+    productPrice: '₽200',
+  },
+];
 
 const createCard = (cardData) => {
   const card = document.createElement('div');
@@ -60,11 +62,11 @@ const createCard = (cardData) => {
     </div>
   `;
   return card;
-}
+};
 
 const showCards = (cardsData, container) => {
   cardsData.forEach((card) => container.appendChild(createCard(card)));
-}
+};
 
 const cardsContainer = document.getElementById('cardsContainer');
 const cardsContainer2 = document.getElementById('cardsContainer2');

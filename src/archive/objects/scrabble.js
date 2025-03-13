@@ -1,24 +1,24 @@
 //  испытание Объекты Скреббл
 
 const scrabble = (letters, word) => {
-    if (letters.length < word.length) {
-        return false
+  if (letters.length < word.length) {
+    return false;
+  }
+  const lettersObj = {};
+  for (const letter of letters.toLowerCase()) {
+    lettersObj[letter] = (lettersObj[letter] ?? 0) + 1;
+  }
+  let count = 0;
+  console.log(lettersObj);
+  for (const symbol of word.toLowerCase()) {
+    if (lettersObj[symbol] > 0) {
+      count += 1;
+      lettersObj[symbol] -= 1;
     }
-    const lettersObj = {};
-    for (const letter of letters.toLowerCase()) {
-        lettersObj[letter] = (lettersObj[letter] ?? 0) + 1;
-    }
-    let count = 0;
-    console.log(lettersObj);
-    for (const symbol of word.toLowerCase()) {
-        if (lettersObj[symbol] > 0) {
-            count += 1;
-            lettersObj[symbol] -= 1;
-        }
-    }
-    console.log(lettersObj);
+  }
+  console.log(lettersObj);
 
-    return word.length === count ? true : false;
+  return word.length === count;
 };
 
 console.log(scrabble('katas', 'steak'));

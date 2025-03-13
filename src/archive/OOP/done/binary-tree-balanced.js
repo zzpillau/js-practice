@@ -7,7 +7,7 @@ class Node {
 
   #prefixTraverse(node, callback) {
     if (!node) {
-      return
+      return;
     }
     callback(node);
     this.#prefixTraverse(node.left, callback);
@@ -17,25 +17,32 @@ class Node {
   callbackRecurs() {
     this.#prefixTraverse(this, (node) => {
       console.log(node.key);
-    })
+    });
   }
-
-
 }
 
-
-const tree1 = new Node(4,
-  new Node(3,
-    new Node(2)));
+const tree1 = new Node(
+  4,
+  new Node(
+    3,
+    new Node(2),
+  ),
+);
 
 console.log(tree1.callbackRecurs());
 
 // console.log(tree1.isBalanced()); // true
 
-const tree2 = new Node(4,
-  new Node(3,
-    new Node(2,
-      new Node(1))));
+const tree2 = new Node(
+  4,
+  new Node(
+    3,
+    new Node(
+      2,
+      new Node(1),
+    ),
+  ),
+);
 
 console.log(tree2);
 

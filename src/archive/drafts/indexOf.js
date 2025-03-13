@@ -1,7 +1,5 @@
 import _ from 'lodash';
 
-const indexOf = (items, value, fromIndex = 0) => {
-  return _.indexOf(items, value, fromIndex);
-};
+const indexOf = (items, value, fromIndex = 0) => _.indexOf(items, value, fromIndex);
 
 export default indexOf;

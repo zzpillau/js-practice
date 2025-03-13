@@ -9,35 +9,25 @@ const getDirectorySize = (dirPath, cb) => {
   fs.readdir(dirPath, (err, fileList) => {
     if (err) {
       cb(err);
-      return; 
+      return;
     }
     console.log(fileList);
-    
 
-    const pathes = fileList.map((file) => {
-      
-      return getPathToFile(dirPath, file);
-    })
+    const pathes = fileList.map((file) => getPathToFile(dirPath, file));
 
     async.map(pathes, fs.stat, (err, stats) => {
       console.log(stats);
       if (err) {
         cb(err);
-        return
+        return;
       }
-        cb(err, _.sumBy(stats.filter((el) => el.isFile()), 'size'))
-      })
-    })
-
- 
-  }
-
-
+      cb(err, _.sumBy(stats.filter((el) => el.isFile()), 'size'));
+    });
+  });
+};
 
 const fixtures = '/home/zzpillau/js-practice/src/asynchronous/__fixtures__/arrays';
 
-
 getDirectorySize(fixtures, (err, size) => {
-    console.log(size);
-  });
- 
+  console.log(size);
+});

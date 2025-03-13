@@ -16,27 +16,22 @@ class Enumerable {
 
     const cb = (someArg) => (someEl) => {
       const keys = Object.keys(someArg); // тут массив ключей аргс
-        return keys.every((key) => someEl[key] === someArg[key]);
-    }
+      return keys.every((key) => someEl[key] === someArg[key]);
+    };
 
     const result = myArgs.map((arg) => {
       if (typeof arg === 'function') {
         return (coll) => coll.filter(arg);
       }
 
-      
-      const callback = cb.call(this, arg)
+      const callback = cb.call(this, arg);
       return (coll) => coll.filter(callback);
-    
     });
 
-
-    return this.build(result)
+    return this.build(result);
   }
-  
+
   // END
-
-
 
   getProcessedCollection() {
     if (!this.memo) {
@@ -50,14 +45,12 @@ class Enumerable {
     return this.getProcessedCollection().length;
   }
 
-  toArray() {    
-    
+  toArray() {
     return this.getProcessedCollection().slice();
   }
 }
 
 export default Enumerable;
-
 
 const cars = [
   { brand: 'bmw', model: 'm5', year: 2014 },
@@ -68,9 +61,5 @@ const cars = [
 ];
 const coll = new Enumerable(cars);
 
-
-
 const result = coll.where();
 console.log(result.toArray());
-
-

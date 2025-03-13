@@ -16,10 +16,7 @@ function Company(name) {
   this.name = name;
 }
 
-const company = new Company;
+const company = new Company();
 const proto2 = Object.getPrototypeOf(company);
 
 console.log(proto2);
-
-
-

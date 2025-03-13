@@ -1,7 +1,7 @@
 function make(numer, denom) {
   return {
-    numer: numer,
-    denom: denom,
+    numer,
+    denom,
     getNumer() {
       return this.numer;
     },
@@ -15,7 +15,7 @@ function make(numer, denom) {
       return this.denom = denom;
     },
     toString() {
-      return `${this.numer}/${this.denom}`
+      return `${this.numer}/${this.denom}`;
     },
     add(obj) {
       return {
@@ -27,9 +27,9 @@ function make(numer, denom) {
         getDenom() {
           return this.denom;
         },
-      }
-    }
-  }
+      };
+    },
+  };
 }
 
 const rat1 = make(3, 8);

@@ -27,7 +27,6 @@ const getAllMatryoshkaNames = (matryoshka) => {
   console.log(`матрешка: ${matryoshka.name} - вверх`);
   console.log('result ===', result);
   return result;
-}
+};
 
 console.log(getAllMatryoshkaNames(nestedMatryoshka));
-

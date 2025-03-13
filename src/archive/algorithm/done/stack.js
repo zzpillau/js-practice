@@ -1,6 +1,5 @@
 import LinkedList from '../linkedList.js';
 
-
 // class Stack {
 //   items = [];
 
@@ -38,7 +37,7 @@ import LinkedList from '../linkedList.js';
 //       a = stack.pop();
 //       stack.push(a - b);
 //       break;
-    
+
 //     case '*':
 //       b = stack.pop();
 //       a = stack.pop();
@@ -50,15 +49,13 @@ import LinkedList from '../linkedList.js';
 //       a = stack.pop();
 //       stack.push(a / b);
 //       break;
-    
+
 //     default:
 //       stack.push(parseFloat(lexem));
 //   }
 // }
 
 // console.log(stack);
-
-
 
 class Stack {
   items = new LinkedList();
@@ -68,7 +65,7 @@ class Stack {
   }
 
   pop() {
-    return this.items.remove()
+    return this.items.remove();
   }
 
   isEmpty() {
@@ -91,21 +88,15 @@ const normalizeString = (str) => {
   }
 
   return stack.join('');
-}
+};
 
 const solution = (str1, str2) => {
   const normStr1 = normalizeString(str1);
   const normStr2 = normalizeString(str2);
 
   return normStr1 === normStr2;
-
-}
+};
 
 console.log(normalizeString('ab#c'));
 
-
 console.log(solution('ab#c', 'ab#c'));
-
-
-
-

@@ -12,8 +12,8 @@ const slidesData = [
     author: 'Анна',
     location: 'г. Уфа',
     image: 'img/anna_feedback.jpeg',
-  }
-]
+  },
+];
 
 const sliderContainer = document.getElementById('sliderContainer');
 let currentSlideIndex = 0;
@@ -27,7 +27,7 @@ const switchPrevSlide = () => {
 
 const switchNextSlide = () => {
   if (currentSlideIndex < slidesData.length - 1) {
-  currentSlideIndex += 1;
+    currentSlideIndex += 1;
   }
   showSlide(currentSlideIndex);
 };
@@ -53,7 +53,7 @@ const createSlide = (slideData) => {
     </div>
   `;
   return slide;
-}
+};
 
 const showSlide = (index) => {
   slidesData.forEach((slide) => sliderContainer.appendChild(createSlide(slide)));
@@ -65,6 +65,6 @@ const showSlide = (index) => {
       slides[i].classList.remove('active-slide');
     }
   }
-}
+};
 
 showSlide(currentSlideIndex);

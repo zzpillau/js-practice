@@ -1,10 +1,8 @@
 const objectify = (coll, selector) => coll
   .reduce((prevAcc, el) => {
-    const result = {[selector(el)]: el}
-    return prevAcc = {...result, ...prevAcc}
+    const result = { [selector(el)]: el };
+    return prevAcc = { ...result, ...prevAcc };
   }, {});
-
-
 
 const cars = [
   {

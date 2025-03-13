@@ -6,7 +6,6 @@ class DoubleLinkedListNode {
   }
 }
 
-
 class DoubleLinkedList {
   constructor() {
     this.head = null;
@@ -137,7 +136,6 @@ class DoubleLinkedList {
   }
 }
 
-
 const getDoubleLinkedList = (collection) => {
   const linkedList = new DoubleLinkedList();
 
@@ -149,9 +147,7 @@ const getDoubleLinkedList = (collection) => {
   return linkedList;
 };
 
-
 const solution = (items) => {
-
   const list = getDoubleLinkedList(items);
 
   // const newList = new DoubleLinkedList();
@@ -160,26 +156,21 @@ const solution = (items) => {
     return items;
   }
 
-  let headNode = list.head;
-  let nextNode = list.head.next;
+  const headNode = list.head;
+  const nextNode = list.head.next;
 
-  
   const newHead = new DoubleLinkedListNode(nextNode.value, headNode, null);
-  const newNext = new DoubleLinkedListNode(headNode.value, nextNode.next, newHead)
+  const newNext = new DoubleLinkedListNode(headNode.value, nextNode.next, newHead);
 
   console.log(newHead);
   console.log(newNext);
 
   list.head = newHead;
   list.head.next = newNext;
-  
-  
-    
-  
+
   console.log('now i will be return this', list.toArray());
   return list.toArray();
-}
-
+};
 
 const items = [[10, 20], 0, -1, ['hey']];
 

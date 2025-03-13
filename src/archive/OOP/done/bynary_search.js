@@ -18,7 +18,6 @@ class Node {
   }
 
   search(key) {
-
     const currentKey = this.getKey();
     const rightNode = this.getRight();
     const leftNode = this.getLeft();
@@ -28,39 +27,46 @@ class Node {
     }
     if (key === currentKey) {
       return this;
-
     }
     if (key < currentKey && rightNode) {
-      return rightNode.search(key)
+      return rightNode.search(key);
     }
     if (key > currentKey && leftNode) {
-      return leftNode.search(key)
+      return leftNode.search(key);
     }
     return null;
   }
-
 }
 
 const tree2 = new Node(9, new Node(4), new Node(17));
 
 console.log(tree2);
 
-console.log(tree2.getKey()) // (9);
-console.log(tree2.getLeft().getKey()) // (4);
-console.log(tree2.getRight().getKey()) // (17);
+console.log(tree2.getKey()); // (9);
+console.log(tree2.getLeft().getKey()); // (4);
+console.log(tree2.getRight().getKey()); // (17);
 
-
-const tree = new Node(9,
-  new Node(4,
+const tree = new Node(
+  9,
+  new Node(
+    4,
     new Node(3),
-    new Node(6,
+    new Node(
+      6,
       new Node(5),
-      new Node(7))),
-  new Node(17,
+      new Node(7),
+    ),
+  ),
+  new Node(
+    17,
     null,
-    new Node(22,
+    new Node(
+      22,
       new Node(20),
-      null)));
+      null,
+    ),
+  ),
+);
 
 console.log(tree);
 
@@ -72,4 +78,3 @@ console.log(tree);
 
 // console.log(tree.search(3).getLeft()); // null
 // console.log(tree.search(35)); // null
-

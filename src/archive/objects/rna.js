@@ -1,15 +1,16 @@
-
 const dnaToRna = (dna) => {
-    const  valueMatching = {G: 'C', C: 'G', T: 'A', A: 'U'};
-    const dnaToArray = dna.split('');
-    const rna = [];
-    for (const item of dnaToArray) {
-        if(!Object.hasOwn(valueMatching, item)) {
-            return null;
-        }
-        rna.push(valueMatching[item]);
+  const valueMatching = {
+    G: 'C', C: 'G', T: 'A', A: 'U',
+  };
+  const dnaToArray = dna.split('');
+  const rna = [];
+  for (const item of dnaToArray) {
+    if (!Object.hasOwn(valueMatching, item)) {
+      return null;
     }
-    return rna.join('');
+    rna.push(valueMatching[item]);
+  }
+  return rna.join('');
 };
 
 console.log(dnaToRna('ACGTGGTCTTAA')); // 'UGCACCAGAAUU'

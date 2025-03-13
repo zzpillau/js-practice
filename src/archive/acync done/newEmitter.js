@@ -32,21 +32,18 @@ class Tree extends EventEmitter {
 //     const event = 'remove';
 //     this.emit(event, node);
 //   }
-};
+}
 
 const tree = new Tree('start');
 
-tree.on('add', node => {
+tree.on('add', (node) => {
   console.log('add %s', node.getKey());
 });
 
 tree.addChild('example');
 
-
 // tree.on('remove', node => {
 //     console.log('remove %s', node.getKey());
 //   });
 
-
 //   tree.removeChild('test');
-

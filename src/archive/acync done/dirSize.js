@@ -11,16 +11,14 @@ const getDirectorySize = (dirPath) => {
     // .then((pathes) => console.log(pathes))
     // .then((pathes) => pathes.map((path) => console.log(path)))
     .then((pathes) => Promise.all(pathes.map((path) => fsp.stat(path))))
-    .then((stats) => stats.map((stat) => stat.isDirectory() ? 0 : stat.size))
+    .then((stats) => stats.map((stat) => (stat.isDirectory() ? 0 : stat.size)))
     .then((res) => console.log(_.sumBy(res)));
 
   const promises = Promise.all([prom]);
 
   // return promises.then(console.log);
   return promises;
-}
-
-
+};
 
 getDirectorySize('/home/zzpillau/js-practice/src/asynchronous/__fixtures__/arrays');
 // getDirectorySize('/home/zzpillau/js-practice/src/asynchronous/__fixtures__/arrays').then(console.log);

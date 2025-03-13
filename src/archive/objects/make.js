@@ -1,9 +1,9 @@
 const make = (name, properties) => {
-    const defaultProperties = {};
-    defaultProperties.state = 'moderating';
-    defaultProperties.createdAt = Date.now();
-    const company = {name, ...defaultProperties, ...properties};
-    return company;
+  const defaultProperties = {};
+  defaultProperties.state = 'moderating';
+  defaultProperties.createdAt = Date.now();
+  const company = { name, ...defaultProperties, ...properties };
+  return company;
 };
 
 const company = make('Hexlet', { website: 'hexlet.io', state: 'published' });
@@ -34,9 +34,8 @@ console.log(company1);
 //      state: 'moderating',
 //      createdAt: Date.now(),
 //      };
-//  
+//
 //      return { ...defaultData, ...data, name };
 //  };
 //  // END
-//  
-
+//

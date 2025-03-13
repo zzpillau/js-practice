@@ -1,9 +1,5 @@
 const getCarsCountByYear = (cars) => cars
-  .reduce((acc, { year }) => ({ ...acc, [year]: acc[year] + 1 || 1}), {});
-
-
-
-
+  .reduce((acc, { year }) => ({ ...acc, [year]: acc[year] + 1 || 1 }), {});
 
 const cars = [
   { brand: 'bmw', model: 'm5', year: 2014 },

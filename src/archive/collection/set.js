@@ -1,5 +1,4 @@
 const protect = (obj) => {
-
   const isPrivat = (prop) => prop.startsWith('_');
 
   const handler = {
@@ -23,8 +22,8 @@ const protect = (obj) => {
       }
       throw new Error('Set Error');
     },
-  }
+  };
   return new Proxy(obj, handler);
-}
+};
 
 export default protect;

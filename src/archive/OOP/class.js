@@ -1,41 +1,40 @@
 class Company {
-    employees = [];
+  employees = [];
 
-    getEmployees() {
-        return this.employees;
-    }
+  getEmployees() {
+    return this.employees;
+  }
 }
 
 const comp = new Company();
 console.log(comp.getEmployees());
 
 class Cart {
-    items = [];
+  items = [];
 
-    getItems() {
-        return this.items;
-    }
+  getItems() {
+    return this.items;
+  }
 
-    addItem(item, count) {
-        this.items.push({ item, count })
-    }
+  addItem(item, count) {
+    this.items.push({ item, count });
+  }
 
-    getCount() {
-        return this.items.reduce((prevAcc, good) => {
-            const { count } = good;
-            return count + prevAcc;
-        }, 0)
-    }
+  getCount() {
+    return this.items.reduce((prevAcc, good) => {
+      const { count } = good;
+      return count + prevAcc;
+    }, 0);
+  }
 
-    getCost() {
-        return this.items.reduce((prevAcc, good) => {
-            const { price } = good.item;
-            const { count } = good;
-            return price * count + prevAcc;
-        }, 0)
-    }
+  getCost() {
+    return this.items.reduce((prevAcc, good) => {
+      const { price } = good.item;
+      const { count } = good;
+      return price * count + prevAcc;
+    }, 0);
+  }
 }
-
 
 const cart = new Cart();
 cart.addItem({ name: 'car', price: 3 }, 5);
@@ -50,5 +49,3 @@ cart.getItems();
 console.log(cart.getItems());
 console.log(cart.getCost());
 console.log(cart.getItems().length);
-
-

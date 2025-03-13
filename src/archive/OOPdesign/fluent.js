@@ -29,8 +29,5 @@ const filteredCars = cars.filter((car) => car.year > 2013);
 const mappedCars = filteredCars.map((car) => car.model);
 mappedCars.all();
 console.log(mappedCars.all());
-cars.all()
+cars.all();
 console.log(cars.all());
-
-
-

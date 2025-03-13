@@ -1,5 +1,4 @@
 class Money {
-
   static rates = {
     usd: {
       eur: 0.7,
@@ -8,7 +7,6 @@ class Money {
       usd: 1.2,
     },
   };
-
 
   static setRate(from, to, value) {
     this.rstes[from][to] = value;
@@ -21,11 +19,10 @@ class Money {
 
   exchangeTo(newCurrency) {
     if (this.currency === newCurrency) {
-      return new Money(this.value, this.currency)
+      return new Money(this.value, this.currency);
     }
 
     const newValue = this.value * this.constructor.rates[this.currency][newCurrency];
-    return new Money(newValue, newCurrency)
-  };
+    return new Money(newValue, newCurrency);
+  }
 }
-

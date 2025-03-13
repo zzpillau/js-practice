@@ -19,6 +19,6 @@ class Company {
   }
 }
 
-const company = new Company('Hexlet', 'support@hexlet.io')
+const company = new Company('Hexlet', 'support@hexlet.io');
 console.log(company.getEmail());
 console.log(company.employees);

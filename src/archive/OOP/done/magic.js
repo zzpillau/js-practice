@@ -13,15 +13,12 @@ function Constructor(value) {
 const newN = new Constructor(10);
 
 Constructor.prototype.valueOf = function () {
-  return typeof this.value === Number ? `value is ${this.value + 0}` : `value is ${this.value}`
-}
+  return typeof this.value === Number ? `value is ${this.value + 0}` : `value is ${this.value}`;
+};
 
-
-const solution = (value) => {
-  return new Constructor(value)
-}
+const solution = (value) => new Constructor(value);
 console.log(newN.valueOf());
 
-console.log(solution(1) + ''); // 'Value is 1'
-console.log(solution(10) + ''); // 'Value is 10'
-console.log(solution('some value') + ''); // 'Value is some value'
+console.log(`${solution(1)}`); // 'Value is 1'
+console.log(`${solution(10)}`); // 'Value is 10'
+console.log(`${solution('some value')}`); // 'Value is some value'

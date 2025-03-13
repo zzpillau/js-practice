@@ -1,7 +1,5 @@
 import _ from 'lodash';
 
-const gt = (value, other) => {
-  return _.gt(value, other);
-};
+const gt = (value, other) => _.gt(value, other);
 
 export default gt;

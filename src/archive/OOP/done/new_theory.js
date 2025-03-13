@@ -10,15 +10,13 @@ function setWebsite(newWebsite) {
   this.website = newWebsite;
 }
 
-const make = (name, website) => {
-  return {
-    name,
-    website,
-    getName,
-    getWebsite,
-    setWebsite,
-  }
-}
+const make = (name, website) => ({
+  name,
+  website,
+  getName,
+  getWebsite,
+  setWebsite,
+});
 
 const zzCompany = make('Zlaya Zaya', 'zz.com');
 
@@ -35,7 +33,7 @@ function Company(name, website) {
   this.getName = getName;
   this.getWebsite = getWebsite;
   this.setWebsite = setWebsite;
-};
+}
 
 const zCompany = new Company('zaya zaya', 'zaya.com');
 

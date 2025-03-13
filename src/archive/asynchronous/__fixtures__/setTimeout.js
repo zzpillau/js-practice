@@ -5,7 +5,6 @@ import _ from 'lodash';
 
 // const foo = (message) => console.log(message);
 
-
 // setTimeout(f, 1000)
 
 // const id1 = setInterval(f, 2000);
@@ -26,7 +25,7 @@ import _ from 'lodash';
 //     }
 //     lastchange = changedetect;
 //     })}, timeout);
-    
+
 //     return timerid;
 // }
 
@@ -35,110 +34,92 @@ import _ from 'lodash';
 // const id3 = watch(filepath, 500, (err) => {
 //     console.log('Wow!');
 //   });
-  
+
 //   setTimeout(() => fs.appendFileSync(filepath, 'ehu'), 700);
 //   setTimeout(() => clearInterval(id3), 5000); // остановить отслеживание через 5 секунд =
 
-
-  const makeTimer222 = (totalTime, cb) => {
-    const interval = 100;
-    const timer = {
-      state: 'working',
-      elapsedTime: interval,
-      start() {
-        const callback = cb.bind(null, timer)
-        const id = setInterval(() => {
-          if (timer.elapsedTime > totalTime) {
-            timer.state = 'finished';
-            clearInterval(id);
-          }
-          callback()
-          timer.elapsedTime = timer.elapsedTime + interval;
-        }, interval);
-      }
-    }
-    return timer;
-  }
-
-
-  const makeTimer = (totalTime, cb) => ({
-    interval: 100,
+const makeTimer222 = (totalTime, cb) => {
+  const interval = 100;
+  const timer = {
     state: 'working',
-    elapsedTime: 0,
-    // counter: totalTime,
+    elapsedTime: interval,
     start() {
-
+      const callback = cb.bind(null, timer);
       const id = setInterval(() => {
-        this.elapsedTime += this.interval;
-
-        if (this.elapsedTime >= totalTime) {
-          this.state = 'finished';
-
-          clearInterval(id, totalTime);
+        if (timer.elapsedTime > totalTime) {
+          timer.state = 'finished';
+          clearInterval(id);
         }
-        const {elapsedTime, state } = this 
-        const cb1 = cb.bind(this);
-        cb1({state, elapsedTime});
-        // this.counter -= this.elapsedTime;
-      }, this.interval);
-
+        callback();
+        timer.elapsedTime += interval;
+      }, interval);
     },
-  })
+  };
+  return timer;
+};
 
+const makeTimer = (totalTime, cb) => ({
+  interval: 100,
+  state: 'working',
+  elapsedTime: 0,
+  // counter: totalTime,
+  start() {
+    const id = setInterval(() => {
+      this.elapsedTime += this.interval;
 
-  // const cb = ({ state, elapsedTime }) => {
-  //   switch (state) {
-  //     case 'working':
-  //       console.log(`Time elapsed: ${elapsedTime}`);
-  //       break;
-  //     case 'finished':
-  //       console.log(`Timer has finished!`);
-  //   }
-  // };
+      if (this.elapsedTime >= totalTime) {
+        this.state = 'finished';
 
-  // const tm = makeTimer(1000, cb);
-  
-  // tm.start();
+        clearInterval(id, totalTime);
+      }
+      const { elapsedTime, state } = this;
+      const cb1 = cb.bind(this);
+      cb1({ state, elapsedTime });
+      // this.counter -= this.elapsedTime;
+    }, this.interval);
+  },
+});
 
+// const cb = ({ state, elapsedTime }) => {
+//   switch (state) {
+//     case 'working':
+//       console.log(`Time elapsed: ${elapsedTime}`);
+//       break;
+//     case 'finished':
+//       console.log(`Timer has finished!`);
+//   }
+// };
 
-  const time = 1000;
-  const laps = [];
-  const timer = makeTimer(time, (data) => {
-    // console.log(data);
-    
-    
-    laps.push(data);
-    console.log('laps', laps);
+// const tm = makeTimer(1000, cb);
 
-  });
+// tm.start();
 
-  setTimeout(() => {
-    const firstLap = laps[0];
-    console.log(laps);
-    
-    // expect(firstLap.elapsedTime).toBeGreaterThanOrEqual(100);
-    
-    // // expect(firstLap.elapsedTime).toBeLessThan(150);
-    console.log(firstLap.elapsedTime);
+const time = 1000;
+const laps = [];
+const timer = makeTimer(time, (data) => {
+  // console.log(data);
 
-    
-    // // expect(firstLap.state).toBe('working');
-    console.log(firstLap.state);
-    
+  laps.push(data);
+  console.log('laps', laps);
+});
 
-    const lastLap = _.last(laps);
+setTimeout(() => {
+  const firstLap = laps[0];
+  console.log(laps);
 
-    // expect(lastLap.state).toBe('finished');
-    console.log(lastLap.state);
-    // console.log(laps);
-    
-    
+  // expect(firstLap.elapsedTime).toBeGreaterThanOrEqual(100);
 
-  }, 1200);
+  // // expect(firstLap.elapsedTime).toBeLessThan(150);
+  console.log(firstLap.elapsedTime);
 
-  timer.start();
+  // // expect(firstLap.state).toBe('working');
+  console.log(firstLap.state);
 
-  
-  
-  
-   
+  const lastLap = _.last(laps);
+
+  // expect(lastLap.state).toBe('finished');
+  console.log(lastLap.state);
+  // console.log(laps);
+}, 1200);
+
+timer.start();

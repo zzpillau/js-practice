@@ -61,11 +61,10 @@ class Hash {
 
   get(key) {
     const index = Hash.calculateIndex(this.table, key);
-        if (typeof (this.table[index]) === 'undefined') {
-      
+    if (typeof (this.table[index]) === 'undefined') {
       return 'ouch!!!!!!!!!!!';
     }
-      
+
     for (const pair of this.table[index]) {
       if (pair.key === key) {
         return pair.value;
@@ -73,75 +72,49 @@ class Hash {
     }
 
     return undefined;
-  } 
-
+  }
 }
-
-
 
 const calculate_Index = (table, key) => {
   const hash = (s) => {
     const k = 65537;
     const m = 2 ** 20;
-  
+
     let result = 0;
     let power = 1;
     for (let i = 0; i < s.length; i += 1) {
       result = (result + power * s.charCodeAt(i)) % m;
       power = (power * k) % m;
     }
-  
+
     return result;
-  }
+  };
 
   return hash(String(key)) % table.length;
-}
-
-
+};
 
 const remove = (hash, key) => {
-
   const index = calculate_Index(hash.table, key);
   console.log(index);
-  
 
-console.log(hash);
+  console.log(hash);
 
-for (const pair of hash.table) {
-  if (typeof pair !== "undefined") {
-    console.log('$$$$$$$$$$$$$$$$$', pair.head);
-    console.log('*****************', pair.tail);
-    
- 
-     
-    
-  
-  } 
-}
-
-
-  
-
-
-
-}
-
-
+  for (const pair of hash.table) {
+    if (typeof pair !== 'undefined') {
+      console.log('$$$$$$$$$$$$$$$$$', pair.head);
+      console.log('*****************', pair.tail);
+    }
+  }
+};
 
 const solution = (map, key) => {
-
   const hash = new Hash();
 
   for (const [key, value] of Object.entries(map)) {
-      hash.set(key, value);
+    hash.set(key, value);
   }
 
   return remove(hash, key);
-}
-
+};
 
 console.log(solution({ key1: 'val1', key2: 'val2' }, 'key1'));
-
-
-
-

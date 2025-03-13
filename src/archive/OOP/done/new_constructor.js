@@ -21,14 +21,12 @@ function getWebsite() {
   return this.website;
 }
 
-const make = (name, website) => {
-  return {
-    name,
-    website,
-    getName,
-    getWebsite,
-  };
-};
+const make = (name, website) => ({
+  name,
+  website,
+  getName,
+  getWebsite,
+});
 
 // оператор new
 

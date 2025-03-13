@@ -24,17 +24,13 @@ import EventEmitter from 'events';
 //     clock.stop();
 // }, 10000);
 
-
-const emitter = new EventEmitter;
+const emitter = new EventEmitter();
 
 // console.log(emitter)
 
 emitter.once('beep', () => console.log('beep'));
 emitter.on('beep', () => console.log('loop again'));
 
-
 emitter.emit('beep');
 
 console.log(emitter);
-
-

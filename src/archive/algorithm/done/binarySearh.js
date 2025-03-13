@@ -2,13 +2,13 @@ const stopWords = ['ее', 'на', 'по', 'со', 'же', 'браво', 'все
 
 const isStopWord = (candidate) => {
   for (let i = 0; i < stopWords.length; i += 1) {
-    if(stopWords[i] === candidate) {
+    if (stopWords[i] === candidate) {
       return true;
     }
   }
 
   return false;
-} 
+};
 
 const binarySearch = (candidate) => {
   let first = 0;
@@ -24,11 +24,11 @@ const binarySearch = (candidate) => {
       last = middle - 1;
     } else {
       first = middle + 1;
-    }    
+    }
   }
 
   return false;
-}
+};
 
 console.log(binarySearch('щй'));
 
@@ -55,10 +55,10 @@ const solution = (phoneBook, name) => {
     } else {
       first = middle + 1;
     }
-  };
+  }
 
-  return 'Name not found!'
-}
+  return 'Name not found!';
+};
 
 const phonebook = [
   { name: 'Alex Bowman', number: '48-2002' },
@@ -67,8 +67,8 @@ const phonebook = [
 ];
 
 console.log(solution(phonebook, 'Alex Bowman'));
- // '48-2002'
+// '48-2002'
 console.log(solution(phonebook, 'None'));
- // 'Name not found!'
+// 'Name not found!'
 console.log(solution([], 'Alex Bowman'));
- // 'Phonebook is empty!'
+// 'Phonebook is empty!'

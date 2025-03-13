@@ -1,11 +1,10 @@
 import _ from 'lodash';
 
-const makeMatrixRow = (arr) =>
-  arr.map((el) => {
-    const splited = el.split('');
-    const map2 = splited.map((it) => [it]);
-    return map2;
-  });
+const makeMatrixRow = (arr) => arr.map((el) => {
+  const splited = el.split('');
+  const map2 = splited.map((it) => [it]);
+  return map2;
+});
 
 const rotateLeftAndJoin = (matrix) => {
   let arrElement = [];

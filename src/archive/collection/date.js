@@ -4,40 +4,35 @@ import { cs } from 'date-fns/locale';
 
 const { keyBy, get } = lodash;
 
-
 const normalizeData = (dates, beginDate, endDate) => {
   const interval = eachDayOfInterval({
     start: new Date(beginDate.split('-')),
-    end: new Date(endDate.split('-')), 
+    end: new Date(endDate.split('-')),
   });
 
-    const intervalObj = interval.reduce((acc, date) => {
-    const formateddate = format(date, "dd.MM.yyyy");
+  const intervalObj = interval.reduce((acc, date) => {
+    const formateddate = format(date, 'dd.MM.yyyy');
     const defaultValue = 0;
-    return {...acc, [formateddate]: defaultValue };
-  }, {}
-  );
+    return { ...acc, [formateddate]: defaultValue };
+  }, {});
 
   console.log(intervalObj, 'intervalObj');
 
   const set = new Set(Object.keys(intervalObj));
   // console.log(set);
-  
-  const dataObj = dates
-    .reduce((acc, {value, date}) => (set.has(date) ? {...acc, [date]: value} : {...acc}), {});
 
-  const joined = {...intervalObj, ...dataObj};
+  const dataObj = dates
+    .reduce((acc, { value, date }) => (set.has(date) ? { ...acc, [date]: value } : { ...acc }), {});
+
+  const joined = { ...intervalObj, ...dataObj };
   console.log(joined);
 
-  
   const output = Object
     .entries(joined)
-    .map(([date, value]) => ({value, date}));
+    .map(([date, value]) => ({ value, date }));
 
-    return output;  
-}
-
-
+  return output;
+};
 
 const data = [
   { value: 14, date: '31.07.2018' },
@@ -67,14 +62,11 @@ const end = '2018-08-07';
 // const begin = '2018-08-01';
 // const end = '2018-08-06';
 
-
-console.log(normalizeData(data, begin, end))
-
-
+console.log(normalizeData(data, begin, end));
 
 // const interval = eachDayOfInterval({
 //   start: new Date(begin.split('-')),
-//   end: new Date(end.split('-')), 
+//   end: new Date(end.split('-')),
 // });
 
 // console.log(interval);
@@ -83,25 +75,19 @@ console.log(normalizeData(data, begin, end))
 
 //   const formateddate = format(date, "dd.MM.yyyy");
 //   const defaultValue = 0;
-  
+
 //   return {...acc, [formateddate]: defaultValue };
 
 // }, {}
 // ); // добавляет 1,где надо!
 
-
 // console.log(formatedObj);
-
-
-
 
 // console.log(data);
 
 // const dataObj = data.reduce((acc, {value, date}) => ({...acc, [date]: value}), {});
 
 // console.log(dataObj);
-
-
 
 // const joined = {...formatedObj, ...dataObj};
 
@@ -110,25 +96,3 @@ console.log(normalizeData(data, begin, end))
 // const output = Object.entries(joined).map(([date, value]) => ({value, date}));
 
 // console.log(output);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

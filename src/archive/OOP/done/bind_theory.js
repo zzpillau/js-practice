@@ -11,14 +11,12 @@
 
 // // setTimeout(() => printer.print(), 1000);
 
-
 // const fn = () => printer.print();
 
 // // fn();
 
 // const value = 'hi';
 // // setTimeout(() => printer.print(value), 1000);
-
 
 // const boundPrint = printer.print.bind(printer);
 
@@ -36,8 +34,6 @@
 
 // // func.call([thisArg[, arg1, arg2, ...argN]])
 // print.call(printer, 'helllllo')
-
-
 
 const greeting = (a) => (b) => (c) => (d) => console.log(`${a}${b}${c}${d}`);
 

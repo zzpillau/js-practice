@@ -1,8 +1,9 @@
-import fs from 'fs'
-const content = fs.readFileSync("/home/zzpillau/js-practice/src/functions/env/s.conf", 'utf-8');
+import fs from 'fs';
+
+const content = fs.readFileSync('/home/zzpillau/js-practice/src/functions/env/s.conf', 'utf-8');
 
 // const getForwardedVariables = (content) => {
-  
+
 //   const splittedCont = content.split('\n');
 
 //   const filteredEnv = splittedCont.filter((str) => str.startsWith('env') && str.includes('X_FORWARDED_'))
@@ -26,15 +27,13 @@ const content = fs.readFileSync("/home/zzpillau/js-practice/src/functions/env/s.
 const getForwardedVariables = (content) => {
   const splittedContent = content.split('\n')
     .filter((str) => str.startsWith('env') && str.includes('X_FORWARDED_'))
-    .map((str) => str.replace('environment=', '').split(','))
+    .map((str) => str.replace('environment=', '').split(','));
 
   const clearedContent = splittedContent.flat()
-    .filter(item => item.includes('FOR'))
-    .map((item) => {
-    return item.replaceAll('"', '').replace('X_FORWARDED_', '')
-  })
-  return clearedContent.join(',')
-}
+    .filter((item) => item.includes('FOR'))
+    .map((item) => item.replaceAll('"', '').replace('X_FORWARDED_', ''));
+  return clearedContent.join(',');
+};
 
 const result = getForwardedVariables(content);
 console.log(result); // => "MAIL=tirion@google.com,HOME=/home/tirion,var3=value"

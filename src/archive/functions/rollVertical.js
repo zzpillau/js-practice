@@ -10,15 +10,11 @@ const getRandomFn = (seed) => {
 const roundsCount = 32;
 const rollDie = () => fakerator().random.number(1, 6);
 
-const viewPercent = (a, b) => {
-  return `${_.round((a / b) * 100)}%`;
-};
+const viewPercent = (a, b) => `${_.round((a / b) * 100)}%`;
 
 const makeMatrixRow = (arr) => arr.map((el) => [el]);
 
-const normalizedLine = (line) => {
-  return _.padEnd(line, 4, ' ');
-};
+const normalizedLine = (line) => _.padEnd(line, 4, ' ');
 
 const rotateLeft = (matrix) => {
   let arrElement = [];

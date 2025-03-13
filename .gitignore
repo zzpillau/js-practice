@@ -13,3 +13,4 @@
 # ESLint files
 .eslintrc.yml
 eslint.config.js
+.qodo

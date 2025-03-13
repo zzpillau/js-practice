@@ -15,26 +15,26 @@ const isValidIPv6 = (address) => {
   console.log('compact', compact);
 
   if (ip.startsWith(':') && !ip.startsWith('::')) {
-    console.log(`if (ip.startsWith(':') && !ip.startsWith('::'))`);
+    console.log('if (ip.startsWith(\':\') && !ip.startsWith(\'::\'))');
     return false;
   } // проверка на начало и конец с :
 
   // сделать reduce! собирать filtered в аккумулятор
 
   if (ip.endsWith(':')) {
-    console.log(`ip.endsWith(':')`);
+    console.log('ip.endsWith(\':\')');
     return false;
   } // проверка на начало и конец с :
 
   const filt2 = splitIp.filter((el) => el.length > 4);
   if (filt2.length > 0) {
-    console.log(`el.length > 4`);
+    console.log('el.length > 4');
     return false;
   }
 
   const fil = splitIp.filter((el) => el === '');
   if (fil.length > 1 && !ip.startsWith('::')) {
-    console.log(`el === ''`);
+    console.log('el === \'\'');
     return false;
   }
 
@@ -50,7 +50,7 @@ const isValidIPv6 = (address) => {
   // console.log(filtered3);
   // проверка на 16-ричность
 
-  return filtered3.length > 0 ? false : true;
+  return !(filtered3.length > 0);
 };
 
 // console.log(isValidIPv6('10:d3:2d06:24:400c:5ee0:be:3d'));

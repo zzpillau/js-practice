@@ -1,9 +1,9 @@
-import url from 'url'; 
+import url from 'url';
 import querystring from 'querystring';
 
 const { URL } = url;
 
-const parsedURL = new URL ('http://user:pass@host.com:8080/p/a/t/h?query=string#hash');
+const parsedURL = new URL('http://user:pass@host.com:8080/p/a/t/h?query=string#hash');
 
 console.log(parsedURL);
 
@@ -16,7 +16,6 @@ console.log(parsedStr);
 const stringifiedStr = querystring.stringify(parsedStr);
 
 console.log(stringifiedStr);
-
 
 const url1 = 'https://hexlet.io/?q=%D1%8D%D1%80%D0%BB%D0%B0%D0%BD%D0%B3';
 
@@ -40,6 +39,6 @@ console.log(query);
 const url2 = new URL('/my', 'https://hexlet.io');
 console.log(url2);
 
-url2.searchParams.set('page', 5)
+url2.searchParams.set('page', 5);
 
-console.log(url2.toString( ));
+console.log(url2.toString());

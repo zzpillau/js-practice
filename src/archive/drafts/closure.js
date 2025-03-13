@@ -1,8 +1,4 @@
-const savePassword = (password) => {
-    return (checkPassword) => {
-        return password === checkPassword;
-    }
-}
+const savePassword = (password) => (checkPassword) => password === checkPassword;
 
 const secret = 'zzpillau';
 
@@ -13,7 +9,7 @@ console.log(isCorrectPassword('zzpillau'));
 
 const sub = (a, b) => a - b;
 
-const flip = (fn) => (a, b) => fn(b, a)
+const flip = (fn) => (a, b) => fn(b, a);
 
 const reverseSub = flip(sub);
 

@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import _ from 'lodash';
 
 // const nums = [1, 3, 1, 5, 1];
 const nums = [1, 3, 1, 5, 1, 3, 1, 2, 1, 6, 1, 3];
@@ -6,9 +6,9 @@ const nums = [1, 3, 1, 5, 1, 3, 1, 2, 1, 6, 1, 3];
 const probabilities = (diceRolls) => {
   const getNextRolls = (item, array) => array
     .reduce((acc, el, i, arr) => {
-      if (item === el && !!arr[i + 1]){
-      acc.push(arr[i + 1])
-    }
+      if (item === el && !!arr[i + 1]) {
+        acc.push(arr[i + 1]);
+      }
       return acc;
     }, [])
     .map((nextRoll, i, arr) => [nextRoll, 1 / arr.length])
@@ -20,7 +20,7 @@ const probabilities = (diceRolls) => {
         acc[x] = y;
       }
       return acc;
-    }, {})
+    }, {});
   return _.uniq(diceRolls).reduce((acc, item) => {
     acc[item] = getNextRolls(item, diceRolls);
     return acc;

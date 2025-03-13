@@ -1,5 +1,5 @@
 // @ts-check
-import {reverse} from './reverse.js';
+import { reverse } from './reverse.js';
 
 test('reverse', () => {
   expect(reverse('')).toBe('');

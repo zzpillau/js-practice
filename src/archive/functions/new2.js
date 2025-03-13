@@ -1,4 +1,3 @@
-
 import _ from 'lodash';
 
 const freeEmailDomains = [
@@ -8,8 +7,7 @@ const freeEmailDomains = [
   'yahoo.com',
 ];
 
-// [emails], [freeEmailDomains]  получить {объект} 
-
+// [emails], [freeEmailDomains]  получить {объект}
 
 const getFreeDomainsCount = (emails) => emails
   .map((email) => {
@@ -22,8 +20,6 @@ const getFreeDomainsCount = (emails) => emails
     return acc;
   }, {});
 
-
-
 // const getFreeDomainsCount = (emails) => emails
 // .map((email) => {
 //   const [, domain] = email.split('@');
@@ -35,20 +31,18 @@ const getFreeDomainsCount = (emails) => emails
 //   return { ...acc, [domain]: count };
 // }, {});
 
-
-
 const emails = [
-    'info@gmail.com',
-    'info@yandex.ru',
-    'info@hotmail.com',
-    'mk@host.com',
-    'support@hexlet.io',
-    'key@yandex.ru',
-    'sergey@gmail.com',
-    'vovan@gmail.com',
-    'vovan@hotmail.com',
+  'info@gmail.com',
+  'info@yandex.ru',
+  'info@hotmail.com',
+  'mk@host.com',
+  'support@hexlet.io',
+  'key@yandex.ru',
+  'sergey@gmail.com',
+  'vovan@gmail.com',
+  'vovan@hotmail.com',
 ];
- 
+
 console.log(getFreeDomainsCount(emails));
 // {
 //   'gmail.com': 3,
@@ -56,4 +50,3 @@ console.log(getFreeDomainsCount(emails));
 //   'hotmail.com': 2,
 
 // };
-

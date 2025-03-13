@@ -3,7 +3,7 @@ const names = ['Alex', 'Vladimir', 'Vladyk'];
 const fixedNames = [];
 
 for (let i = 0; i > names.length; i += 1) {
-  let fixedName = `Mr, ${names[i]}`;
+  const fixedName = `Mr, ${names[i]}`;
   fixedNames.push(fixedName);
 }
 
@@ -45,20 +45,16 @@ for (let i = 0; i < usersSalary.length; i += 1) {
 
 console.log(salariesSum);
 
-const cb = (item) => {
-  return `Mr, ${item}`;
-};
+const cb = (item) => `Mr, ${item}`;
 
-const cb2 = (item) => {
-  return item.length;
-};
+const cb2 = (item) => item.length;
 
 const myMap = (arr, cb) => {
-  let result = [];
+  const result = [];
 
   for (let i = 0; i < arr.length; i += 1) {
-    let currentUser = arr[i];
-    let newViewForItem = cb(currentUser);
+    const currentUser = arr[i];
+    const newViewForItem = cb(currentUser);
     result.push(newViewForItem);
   }
 
@@ -68,18 +64,16 @@ const myMap = (arr, cb) => {
 console.log(myMap(names, cb));
 console.log(myMap(names, cb2));
 
-const newMap = names.map((item) => {
-  return `Hey, ${item}`;
-});
+const newMap = names.map((item) => `Hey, ${item}`);
 
 console.log(newMap);
 
 Array.prototype.myMap = function (cb) {
-  let result = [];
+  const result = [];
 
   for (let i = 0; i < this.length; i += 1) {
-    let currentItem = this[i];
-    let newViewForItem = cb(currentItem);
+    const currentItem = this[i];
+    const newViewForItem = cb(currentItem);
     result.push(newViewForItem);
   }
   return result;
@@ -96,11 +90,11 @@ const users2 = [
 console.log(users2.filter((item) => item.age > 25));
 
 Array.prototype.myFilter = function (cb) {
-  let result = [];
+  const result = [];
 
   for (let i = 0; i < this.length; i += 1) {
-    let currentItem = this[i];
-    let isItemToStay = cb(currentItem);
+    const currentItem = this[i];
+    const isItemToStay = cb(currentItem);
     if (isItemToStay) {
       result.push(currentItem);
     }
@@ -110,9 +104,7 @@ Array.prototype.myFilter = function (cb) {
 
 console.log(users2.myFilter((item) => item.age > 25));
 
-const result = users2.reduce((acc, currentValue) => {
-  return (acc += currentValue.age);
-}, 0);
+const result = users2.reduce((acc, currentValue) => (acc += currentValue.age), 0);
 
 console.log(result);
 

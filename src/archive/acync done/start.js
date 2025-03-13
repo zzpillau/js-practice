@@ -2,14 +2,9 @@ import fs from 'fs';
 
 // console.log(fs.promises.access);
 
-const {promises: fsp} = fs;
+const { promises: fsp } = fs;
 
 // console.log(fsp);
-
-
-
-
-
 
 // // const content = fs.readFileSync('src/asynchronous/__fixtures__/arrays/index-copy.txt', 'utf-8');
 // // console.log(content);
@@ -37,11 +32,9 @@ const {promises: fsp} = fs;
 // //   })
 // // }
 
-
 // const filePath = (fileName) => `src/asynchronous/__fixtures__/arrays/${fileName}`;
 // const firstFile = filePath('first.txt');
 // // console.log(firstFile);
-
 
 // const promise = fsp.readFile(firstFile, 'utf-8');
 // // console.log(promise);
@@ -50,7 +43,6 @@ const {promises: fsp} = fs;
 //   // .then((content) => console.log(content))
 //   .then((content) => fsp.writeFile(filePath('newNewFile.txt'), content))
 //   // .then(console.log);
-
 
 // export const reverse = (path) => {
 //   return fsp.readFile(path, 'utf-8')
@@ -61,11 +53,8 @@ const {promises: fsp} = fs;
 //       return fsp.writeFile(path, reversedContent)
 //     })
 // }
-  
 
 // reverse(firstFile);
-
-
 
 const promise = fsp.readFile('unknownfile')
   .catch(console.log)
@@ -116,5 +105,3 @@ const promise = fsp.readFile('unknownfile')
 //   state.results[1] = data2;
 //   tryWriteNewFile();
 // })
-
-

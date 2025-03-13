@@ -68,7 +68,7 @@ const isValidIPv6 = (address) => {
   // console.log(filtered3);
   // проверка на 16-ричность
 
-  return reduce > 0 ? false : true;
+  return !(reduce > 0);
 };
 
 // console.log(isValidIPv6('10:d3:2d06:24:400c:5ee0:be:3d'));

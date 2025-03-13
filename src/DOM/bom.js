@@ -6,4 +6,3 @@ const solution = (href) => {
 };
 
 console.log(solution('https://hexlet.io'));
-

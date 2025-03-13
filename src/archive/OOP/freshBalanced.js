@@ -1,121 +1,105 @@
 class Node {
-    constructor(key = null, left = null, right =  null) {
-        this.key = key;
-        this.left = left;
-        this.right = right;
+  constructor(key = null, left = null, right = null) {
+    this.key = key;
+    this.left = left;
+    this.right = right;
+  }
+
+  #globalStats = {
+    nodeDone: false,
+    goingLeft: false,
+    goingRight: false,
+    leftDone: false,
+    rightDone: false,
+    left: [],
+    right: [],
+    balanced: 0,
+  };
+
+  #prefixTraverse(node, callback) {
+    if (!node) {
+      // console.log('NO NODE');
+      return;
     }
 
-    #globalStats = {
-        nodeDone: false,
-        goingLeft: false,
-        goingRight: false,
-        leftDone: false,
-        rightDone: false,
-        left: [],
-        right: [],
-        balanced: 0,
-    }
+    // console.log(node.key);
 
-    #prefixTraverse(node, callback) {
+    const stats = {
+      root: this.key,
+      rootLefts: 0,
+      rootRights: 0,
+    };
 
-      
-        if (!node) {
-            // console.log('NO NODE');
-          return ;
-        }
+    this.#globalStats.nodeDone = false;
 
-        // console.log(node.key);
+    callback(node);
 
+    // console.log('GOING LEFT', node.key);
 
+    this.#globalStats.goingLeft = true;
 
+    const lefts = [this.#prefixTraverse(node.left, callback)];
+    lefts;
 
-        const stats = {
-          root: this.key,
-          rootLefts: 0,
-          rootRights: 0,
-      }
+    // console.log('LEFT IS DONE', node.key);
 
-        this.#globalStats.nodeDone = false;
+    this.#globalStats.leftDone = true;
+    this.#globalStats.goingLeft = false;
 
-        callback(node);
+    // console.log('GOING RIGHT', node.key);
 
-          // console.log('GOING LEFT', node.key);
+    this.#globalStats.goingRight = true;
 
-        this.#globalStats.goingLeft = true;
+    const rights = [this.#prefixTraverse(node.right, callback)];
+    console.log(rights);
 
-        const lefts = [this.#prefixTraverse(node.left, callback)];
-        lefts
+    // console.log('RIGHT IS DONE', node.key);
 
-          // console.log('LEFT IS DONE', node.key);
+    this.#globalStats.rightDone = true;
+    this.#globalStats.goingRight = false;
 
-        this.#globalStats.leftDone = true;
-        this.#globalStats.goingLeft = false;
+    // console.log('NODE IS DONE', node.key);
 
+    this.#globalStats.nodeDone = true;
 
+    // console.log(globalStats);
+  }
 
+  isBalanced() {
+    this.#prefixTraverse(this, (acc = [], node) => {
+      const newAcc = [...acc, node.key];
 
-          // console.log('GOING RIGHT', node.key);
+      return newAcc;
+    });
 
-        this.#globalStats.goingRight = true;
-
-        const rights = [this.#prefixTraverse(node.right, callback)];
-        console.log(rights);
-        
-
-          // console.log('RIGHT IS DONE', node.key);
-
-        this.#globalStats.rightDone = true;
-        this.#globalStats.goingRight = false;
-
-
-     
-          // console.log('NODE IS DONE', node.key);
-
-        this.#globalStats.nodeDone = true;
-
-
-        // console.log(globalStats);
-
-
-        
-
-      }
-
-      isBalanced() {
-
-
-        this.#prefixTraverse(this, (acc = [], node) => {
-          const newAcc = [...acc, node.key];
-          
-          return newAcc;
-          
-
-            
-      })
-
-      // console.log(this.#globalStats.left);
-      // console.log(this.#globalStats.right);
-      
-
-
-    }
-    
-
+    // console.log(this.#globalStats.left);
+    // console.log(this.#globalStats.right);
+  }
 }
 
+const tree = new Node(
+  8,
+  new Node(
+    5,
+    new Node(
+      4,
+      new Node(1),
+      new Node(
+        3,
+        new Node(2),
+      ),
+    ),
+    new Node(6),
+  ),
+  new Node(
+    12,
+    new Node(
+      10,
+      null,
+      new Node(11),
+    ),
+    new Node(14),
+  ),
+);
 
-const tree = new Node(8,
-    new Node(5,
-      new Node(4,
-        new Node(1),
-        new Node(3,
-          new Node(2))),
-      new Node(6)),
-    new Node(12,
-      new Node(10,
-        null,
-        new Node(11)),
-      new Node(14)));
-  
-      console.log(tree.isBalanced(), '%%%'); // false
-  
+console.log(tree.isBalanced(), '%%%'); // false
